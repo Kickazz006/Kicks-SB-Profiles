@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Profile Name="Viridian Coast [Kick]" Author="Kickazz006" Version="1.0.0.1">
+
+<!-- in game shortcut keys:
+
+	Register("Interact", Keys.I, InteractCallback);
+	Register("TurnIn", Keys.T, TurnInCallback);
+	Register("PickUp", Keys.P, PickUpCallback);
+	Register("MoveTo", Keys.M, MoveToCallback);
+	Register("GrindHotspot", Keys.H, GrindHotspotCallback);
+	//Register("Jump", Keys.J, JumpCallback);
+	//Register("Wait", Keys.W, WaitCallback);
+   
+-->
+	
+	<!-- 
+	<RequiresPlugin Name="QuestHub" MinVersion="1.0.0.1" DownloadUrl="NULL" />
+	<If Condition="Variables.QuestHub == None">
+		<Exec Code="LoadQuestHubSettings()" /> 
+	</If>
+	-->
+	
+	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
+		<SkipCutscene />
+	</DoWhen>
+	<Reference>
+		<UseItem QuestId="0" Items="610100,610101,610102,610103,610104,610105" Display="Equip Pre-Hongmoon Weapon" Equip="true" RefName="PreHongmoonWeapon" />
+	</Reference>
+	
+	<!-- Chapter 8: Twilight's Edge -->
+	<If Condition="HasQuest(243) and not IsQuestComplete(243)">
+		<MoveTo QuestId="243" QuestStep="1" CreatureId="npc:ch_musung_0005" X="-17609.84" Y="44069.84" Z="1280.839" Map="startzone_p" /> <!-- Lusung --> <!-- StartZone_Dun -->
+		<MoveTo QuestId="243" QuestStep="2" CreatureId="null" X="-13801.33" Y="42965.59" Z="1246.616" Map="startzone_p" /> <!-- Bridge - cutscene --> <!-- StartZone -->
+		<Grind QuestId="243" QuestStep="3" CreatureIds="9620">
+			<Hotspot X="-10275" Y="39655" Z="2155" Range="100" Map="startzone_p" /> <!-- StartZone -->
+		</Grind>
+		<!-- Cutscene, loading, Cutscene, loading, new map -->
+	</If>
+	
+	<!-- Zone: Veridian Coast -->
+	<!-- Chapter 1: From the Water --> <!-- Map: MangJaSup -->
+	<If Condition="HasQuest(301) and not IsQuestComplete(301)">
+		<Interact QuestId="301" QuestStep="1" QuestName="Chapter 1: From the Water" CreatureId="10071" X="-54128" Y="-50880" Z="-3016" Map="MangJaSup_p" /> <!-- Namsoyoo -->
+		<Interact QuestId="301" QuestStep="2" QuestName="Chapter 1: From the Water" CreatureId="10257" X="-54736" Y="-51532" Z="-3064" Map="MangJaSup_p" /> <!-- Ko Suljun -->
+		<MoveTo QuestId="301" QuestStep="3" CreatureId="10258" X="-56428" Y="-52344" Z="-3148" Map="MangJaSup_p" /> <!-- Gungwon -->
+		<Interact QuestId="301" QuestStep="4" QuestName="Chapter 1: From the Water" CreatureId="10258" X="-56428" Y="-52344" Z="-3148" Map="MangJaSup_p" /> <!-- Gungwon -->
+		<!-- Cutscene -->
+	</If>
+
+	<!-- Chapter 2: Captain Dochun -->
+	<If Condition="HasQuest(302) and not IsQuestComplete(302)">
+		<MoveTo QuestId="302" QuestStep="1" CreatureId="10259" X="-58480" Y="-53232" Z="-3228" Map="MangJaSup_p" /> <!-- Gungwon -->
+		<Grind QuestId="302" QuestStep="2" CreatureIds="9939, 9936, 9934, 9942, 9540, 9539"> <!-- Grind 3 Guards -->
+			<Hotspot X="-59461.75" Y="-53071.4" Z="-3273.693" Map="jeryoung_p" />
+		</Grind>
+	<!-- we had issues grinding here, targetting?? -->
+	</If>
+	
+	
+			<Stop Message="stop" />
+			
+		<Interact QuestId="302" QuestStep="3" QuestName="Chapter 2: Captain Dochun" CreatureId="11111" X="-56372" Y="-50756" Z="-3120" MapId="jeryoung_p" />
+		<Interact QuestId="302" QuestStep="4" QuestName="Chapter 2: Captain Dochun" CreatureId="11111" X="-54252" Y="-50688" Z="-3016" MapId="jeryoung_p" />
+	
+	<!-- apoc said use npc:name instead of npcid :(  -->
+	
+	<!-- zzi's code to use as a basis is below -->
+	
+	<!-- Chapter 3: Dodan the Hero -->
+	<If Condition="HasQuest(303) and not IsQuestComplete(303)">
+		<Interact QuestId="303" QuestStep="1" CreatureId="npc:ch_gosuljun_0001" X="-54736" Y="-51536" Z="-3064" MapId="jeryoung_p" />
+		<Grind Condition="IsObjectiveComplete(303, 2)" CreatureIds="mh_chunggak_0005, mh_chunggak_0006, mh_chunggak_0007" MapId="jeryoung_p">
+			<HotSpot X="-57458.12" Y="-57174.61" Z="-3234.261" Map="jeryoung_p" Range="100" />
+		</Grind>
+
+		<Interact QuestId="303" QuestStep="3" CreatureId="npc:ch_gobong_0001" X="-50932" Y="-65536" Z="-3264" MapId="jeryoung_p" />
+		<Grind Condition="IsObjectiveComplete(303, 4)" CreatureIds="mh_chunggak_011, mh_chunggak_012">
+			<HotSpot X="-50932" Y="-65536" Z="-3264" Map="jeryoung_p" />
+		</Grind>
+		<Grind Condition="IsObjectiveComplete(303, 5)" CreatureIds="mh_chunggak_018">
+			<HotSpot X="-50932" Y="-65536" Z="-3264" Map="jeryoung_p" />
+		</Grind>
+		<Interact QuestId="303" QuestStep="6" CreatureId="zoneenv2:e_destroy_2020jaildoor_01" X="-51728" Y="-64868" Z="-3220" MapId="jeryoung_p" />
+		<Interact QuestId="303" QuestStep="7" CreatureId="Ctzn_JinM_NokMyeonCtzn_DoDanHa_002" X="-51820" Y="-64756" Z="-3260" MapId="jeryoung_p" />
+		<Interact QuestId="303" QuestStep="8" CreatureId="e_destroy_landingboat_01" X="-52076" Y="-65452" Z="-3224" MapId="jeryoung_p" />
+		<!-- Combat ? -->
+		<Interact QuestId="303" QuestStep="9" CreatureId="Ctzn_JinM_NokMyeonCtzn_DoDanHa_002" X="-52300" Y="-65376" Z="-3268" MapId="jeryoung_p" />
+		<Stop QuestId="303" QuestStep="10" Message="Please perform windwalk ability" />
+		<Interact QuestId="303" QuestStep="11" CreatureId="CH_JaKyoungDan_0028" X="-49940" Y="-48948" Z="-2388" MapId="jeryoung_p" />
+		<Interact QuestId="303" QuestStep="12" CreatureId="CH_DoChunPung_0002" X="-49832" Y="-56112" Z="-2544" MapId="jeryoung_p" />
+	</If>
+	
+	<!-- Borrowed zzi's class specific weapons -->
+	<If Condition="not IsQuestComplete(497)">
+		<!-- TODO: equip all Hongmoon Weapons -->
+		<If Condition="IsClass('SoulFighter')">
+			<Equip QuestId="497" QuestStep="1" Item="GB_General_Weapon_SoulGauntlet_0022_101" ItemId="3000001" />
+		</If>
+		<If Condition="IsClass('KungFuFighter')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('Summoner')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('Warlock')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('ForceMaster')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('Destroyer')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('BladeMaster')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('SwordMaster')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<If Condition="IsClass('Assassin')">
+			<Stop QuestId="497" QuestStep="1" Message="TODO: Setup Equip Step" />
+		</If>
+		<Interact QuestId="497" QuestStep="1" CreatureId="CH_NamSoYu_001" X="-49872" Y="-56036" Z="-2544" MapId="jeryoung_p" />
+		<Button QuestId="497" QuestStep="2" Shortcut="ToggleGem" />
+		<Equip QuestId="497" QuestStep="2" ItemId="710000" />
+		<Interact QuestId="497" QuestStep="3" CreatureId="CH_NamSoYu_001" X="-49872" Y="-56036" Z="-2544" MapId="jeryoung_p" />
+	</If>
+	
+	<If Condition="HasQuest(304) and not IsQuestComplete(304)"> <!-- Chapter 4: The Bamboo Blossom -->
+		<Interact QuestId="304" QuestStep="1" CreatureId="CH_GwakDeKyu_001" X="-50432" Y="-53740" Z="-2528" MapId="jeryoung_p" />
+	</If>
+	
+	
+	<!-- Borrowed zzi's class specific stuff -->
+	<PickUpQuest QuestId="1361" CreatureId="Ctzn_JinF_CheongRyeongCtzn_RyuBekEon_001" CreatureId="10082" X="-51168" Y="-55536" Z="-2676" MapId="jeryoung_p"/>
+	<PickUpQuest QuestId="321" CreatureId="Ctzn_JinF_CheongRyeongCtzn_RyuBekEon_001" CreatureId="10082" X="-51168" Y="-55536" Z="-2676" MapId="jeryoung_p"/>
+
+	<Button QuestId="321" QuestStep="2" Shortcut="ToggleMinimapScale" />
+	<Button QuestId="321" QuestStep="3" Shortcut="ToggleMinimapAlpha" />
+
+	<Button QuestId="1361" QuestStep="1" Shortcut="ToggleInventory" />
+	<Button QuestId="321" QuestStep="4" Shortcut="ToggleQuestJournal" />
+	
+	<!-- Class specific -->
+	<If Condition="HasQuest(1361) and not IsQuestComplete(1361)"> <!-- Class Quest -->
+		<If Condition="IsClass('SoulFighter')">
+			<Fuse QuestId="1361" QuestStep="1" ItemId="3000001" />
+		</If>
+		<If Condition="IsClass('KungFuFighter')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('Summoner')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('Warlock')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('ForceMaster')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('Destroyer')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('BladeMaster')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('SwordMaster')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+		<If Condition="IsClass('Assassin')">
+			<Stop QuestId="1361" QuestStep="1" Message="TODO: Setup Fuse Step" />
+		</If>
+	<Stop Message="
+		=========WARNING==========\n
+		MULTIPLE ACTIONS REQUIRED\n
+		=========WARNING==========\n
+		Press START After Completion\n
+		==========================\n
+\n
+\n
+		1) Please FUSE your Hongmoon Weapon.\n
+		2) Please TRACK the quest `Soup Her Man`" Condition="not IsQuestStepComplete(1361, 1) and not IsQuestStepComplete(321, 4)" />
+	</If>
+
+	<TurnInQuest QuestId="1361" QuestStep="2" CreatureId="Ctzn_JinF_CheongRyeongCtzn_RyuBekEon_001" CreatureId="10082" X="-51141.3" Y="-55468.21" Z="-2673.676" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="321" QuestStep="5" CreatureId="Ctzn_JinF_CheongRyeongCtzn_RyuBekEon_001" CreatureId="10082" X="-51141.3" Y="-55468.21" Z="-2673.676" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="404" CreatureId="Ctzn_JinF_CheongRyeongCtzn_NaYeRin_001" CreatureId="10084" X="-51911.02" Y="-54775.61" Z="-2657.095" MapId="jeryoung_p" />
+
+	<If Condition="HasQuest(304) and not IsQuestComplete(304)"> <!-- Chapter 4: The Bamboo Blossom -->
+		<Interact QuestId="304" QuestStep="2" CreatureId="CH_JaKyoungDan_013" CreatureId="10163" X="-54124" Y="-50452" Z="-3016" MapId="jeryoung_p" />
+		<Interact QuestId="304" QuestStep="3" CreatureId="CH_KwakChil_0001" CreatureId="10269" X="-53928" Y="-50808" Z="-2984" MapId="jeryoung_p" />
+		<Interact QuestId="304" QuestStep="4" CreatureId="CH_JaKyoungDan_013" CreatureId="10163" X="-54124" Y="-50452" Z="-3016" MapId="jeryoung_p" />
+		<Grind Condition="IsObjectiveComplete(304, 5)" CreatureIds="ME_SoraCrab_004">
+			<HotSpot X="-60518.53" Y="-52951.07" Z="-3306.639" MapId="jeryoung_p" Range="100" />
+		</Grind>
+	</If>
+	
+	<Loot Condition="IsObjectiveComplete(404, 1)" X="-60518.53" Y="-52951.07" Z="-3306.639" MapId="jeryoung_p" Range="100" From="e_onoff_clam_01,e_onoff_clam_02,e_onoff_clam_03,e_onoff_clam_04,e_onoff_clam_05,e_onoff_clam_06,e_onoff_clam_07,e_onoff_clam_08,e_onoff_clam_09,e_onoff_clam_10,e_onoff_clam_11,e_onoff_clam_12,e_onoff_clam_13,e_onoff_clam_14,e_onoff_clam_15,e_onoff_clam_16,e_onoff_clam_17,e_onoff_clam_18,e_onoff_clam_19,e_onoff_clam_20" />
+	<Interact QuestId="304" QuestStep="6" CreatureId="CH_JaKyoungDan_013" CreatureId="10163" X="-54124" Y="-50452" Z="-3016" MapId="jeryoung_p" />
+	
+	<TurnInQuest QuestId="404" CreatureId="Ctzn_JinF_CheongRyeongCtzn_NaYeRin_001" CreatureId="10084" X="-51911.02" Y="-54775.61" Z="-2657.095" MapId="jeryoung_p" />
+
+	<Interact QuestId="304" QuestStep="7" CreatureId="Ctzn_JinM_JaKyungDan_DoCheonPung_002" CreatureId="10075" X="-49792" Y="-56116" Z="-2544" MapId="jeryoung_p" />
+
+	<If Condition="HasQuest(966) and not IsQuestComplete(966)"> <!-- Faction quest -->
+		<MoveTo QuestId="966" X="-51169.2" Y="-54633.91" Z="-2669.932" MapId="jeryoung_p" />
+		<Stop Condition="not IsQuestComplete(966)" Message="Please do the faction quest and press start" />
+	</If>
+
+	<PickUpQuest QuestId="331" CreatureId="CH_Citizen_0027" CreatureId="10559" X="-47944" Y="-51684" Z="-2352" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="304" QuestStep="10" CreatureId="Ctzn_JinM_JaKyungDan_GongSamSik_KFF_001" CreatureId="10126" X="-31544" Y="-50324" Z="-1968" MapId="jeryoung_p" />
+	<!-- End Bamboo Village -->
+	
+	<!-- Class Specific -->
+	<!-- Read the letter QuestQuickSlotPannel.UiCustomPannel.UiCustomColumnList.QuestQuickSlotList_Column_2.QuestQuickSlotList_Column_2_2_Mission -->
+	<ReadLetter Condition="not HasQuest(335) and isClass('SoulFighter')" />
+	<!--
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	<ReadLetter Condition="not HasQuest(3xx) and isClass('classhere')" />
+	-->
+	<!-- End Class Specific -->
+
+	<PickUpQuest QuestId="329" QuestName="Rest and Recovery" CreatureId="10089" CreatureName="Munwi" X="-30916" Y="-50196" Z="-1972" Map="jeryoung_p" CommunicatorPickUp="true" />
+
+	<Interact QuestId="331" QuestStep="1" CreatureId="CH_JaKyoungDan_009" CreatureId="10154" X="-31472" Y="-50948" Z="-1944" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="405" QuestName="Love is A Battlefield" CreatureId="10094" CreatureName="Somai" X="-31396" Y="-51028" Z="-1944" Map="jeryoung_p" CommunicatorPickUp="true" />
+
+	<Grind Condition="not IsQuestStepComplete(405, 1)" CreatureIds="9659,9658">
+		<Hotspot X="-34604" Y="-51612" Z="-2320" MapId="-1" Range="50" />
+	</Grind>
+
+	<Interact QuestId="405" QuestStep="2" ItemPickUp="true" ItemId="800040" />
+
+	<Grind Condition="not IsQuestSubStepComplete(329, 1, 2)" CreatureIds="9511,9656,9657,9661,9660,9510">
+		<Hotspot X="-34604" Y="-51612" Z="-2320" MapId="-1" Range="50" />
+	</Grind>
+	<!-- cave stuff -->
+	
+	<Interact QuestId="305" QuestStep="1" QuestName="Chapter 6: The Honorable Mayor" CreatureId="10076" X="-33136" Y="-53388" Z="-3876" MapId="jeryoung_p" />
+	
+	<!-- Get correct quest id -->
+	<Grind Condition="not HasItem(800006) and not IsQuestStepComplete(000, 1)" CreatureIds="10178,10076,10065,10064,9442,9633,9632,9634">
+		 <HotSpot X="-33136" Y="-53388" Z="-3876" MapId="jeryoung_p" Range="15" />
+	</Grind>
+
+	<Interact QuestId="331" QuestStep="2" QuestName="Quest_331" X="-33136" Y="-53388" Z="-3876" ItemId="800040" ItemPickUp="true" />
+
+	<!-- Quest Specific stuff -->
+	<If Condition="isClass('SoulFighter') and not HasQuest(335)">
+		<Interact QuestId="335" QuestStep="2" QuestName="The Way of the Soul Fighter: Part 1" CreatureId="22812" X="-33428" Y="-47016" Z="-4460" MapId="jeryoung_p" />
+		<ForcedCombat QuestId="335" QuestStep="3" CreatureId="22812">
+			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
+			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
+			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
+		</ForcedCombat>
+		<Interact QuestId="335" QuestStep="4" QuestName="The Way of the Soul Fighter: Part 1" CreatureId="22812" X="-33428" Y="-47012" Z="-4460" MapId="jeryoung_p" />
+		<ForcedCombat QuestId="335" QuestStep="5" CreatureId="22813">
+			<Cast Skill="SoulFighter_Attack_LeftSmashdash_Lv1" />
+		</ForcedCombat>
+		<TurnInQuest QuestId="335" QuestStep="6" QuestName="Quest_335" CreatureId="22806" CreatureName="Brother Hajoon" X="-33428" Y="-47012" Z="-4460" Map="jeryoung_p" CommunicatorTurnIn="true" />
+		<Interact CreatureId="3997697" X="-33428" Y="-47012" Z="-4460" MapId="jeryoung_p" />
+	</If>
+
+	<!-- after the cave -->
+	<Grind Condition="not IsQuestSubStepComplete(329, 1, 1)" CreatureIds="9441">
+	    <Hotspot X="-35760" Y="-47096" Z="-2168" MapId="-1" Range="20" />
+	</Grind>
+	<Cary QuestId="329" QuestStep="2" X="-30916" Y="-50192" Z="-1972" MapId="jeryoung_p"  CreatureId="10089" RequiresInteraction="true">
+		<Hotspot X="-35760" Y="-47096" Z="-2168" MapId="-1" Range="20" Aliases="e_onoff_basket_01,e_onoff_basket_02,e_onoff_basket_03,e_onoff_basket_04,e_onoff_basket_05,e_onoff_basket_06,e_onoff_basket_07,e_onoff_basket_08" />
+	</Cary>
+	<Interact QuestId="329" QuestStep="3" QuestName="Rest and Recovery" CreatureId="10089" X="-30916" Y="-50192" Z="-1972" MapId="jeryoung_p" />
+	<Interact QuestId="305" QuestStep="2" QuestName="Chapter 6: The Honorable Mayor" CreatureId="10126" X="-31544" Y="-50324" Z="-1968" MapId="jeryoung_p" />
+	
+	<PickUpQuest QuestId="1243" QuestName="In Good Repair" CreatureId="10126" CreatureName="Gong Samsik" X="-31544" Y="-50324" Z="-1968" Map="jeryoung_p" CommunicatorPickUp="true" />
+	<TurnInQuest QuestId="331" QuestStep="4" QuestName="Quest_331" CreatureId="10154" CreatureName="Mokdun" X="-31468" Y="-50948" Z="-1944" Map="jeryoung_p" CommunicatorTurnIn="true" />
+    <TurnInQuest QuestId="405" QuestStep="3" QuestName="Quest_405" CreatureId="10094" CreatureName="Somai" X="-31396" Y="-51028" Z="-1944" Map="jeryoung_p" CommunicatorTurnIn="true" />
+    <TurnInQuest QuestId="329" QuestStep="3" QuestName="Quest_329" CreatureId="10092" CreatureName="Gwak Chil" X="-31740" Y="-51380" Z="-1924" Map="jeryoung_p" CommunicatorTurnIn="true" />
+  	
+  	<!-- <MoveTo QuestId="1243" QuestStep="1" X="-31468" Y="-50948" Z="-1944" MapId="jeryoung_p" /> --> <!-- campfires are broken?  -->
+
+  	<Interact QuestId="305" QuestStep="3" QuestName="Chapter 6: The Honorable Mayor" CreatureId="10299" X="-30408" Y="-51312" Z="-1908" MapId="jeryoung_p" />
+  	<Interact QuestId="305" QuestStep="4" QuestName="Chapter 6: The Honorable Mayor" CreatureId="10298" X="-30372" Y="-51212" Z="-1908" MapId="jeryoung_p" />
+
+  	<PickUpQuest QuestId="337" QuestName="Blind Man&apos;s Bluff" CreatureId="10094" CreatureName="Somai" X="-31396" Y="-51028" Z="-1944" Map="jeryoung_p" CommunicatorPickUp="true" />
+	<PickUpQuest QuestId="336" QuestName="Suspicions" CreatureId="10154" CreatureName="Mokdun" X="-31468" Y="-50948" Z="-1944" Map="jeryoung_p" CommunicatorPickUp="true" />
+	
+	<Loot QuestId="337" QuestStep="1" QuestName="Blind Man&apos;s Bluff" CreatureId="3997697" X="-33740" Y="-46996" Z="-2360" MapId="jeryoung_p" />
+	
+	<TurnInQuest QuestId="337" QuestStep="2" QuestName="Blind Man&amp;apos;s Bluff" CreatureId="10171" CreatureName="Blindman Anh" X="-37908" Y="-36820" Z="-384" Map="jeryoung_p" CommunicatorTurnIn="true" />
+	
+	<Interact QuestId="306" QuestStep="1" QuestName="Chapter 7: Endless Dusk" CreatureId="10127" X="-38120" Y="-36924" Z="-384" MapId="jeryoung_p" />
+	
+	<PickUpQuest QuestId="345" QuestName="Clearing the Way" CreatureId="10170" CreatureName="Blindman Sim" X="-37752" Y="-36764" Z="-384" Map="jeryoung_p" CommunicatorPickUp="true" />
+
+	<Interact QuestId="336" QuestStep="1" QuestName="Suspicions" CreatureId="10132" X="-38716" Y="-36588" Z="-384" MapId="jeryoung_p" />
+	<Interact QuestId="306" QuestStep="2" QuestName="Chapter 7: Endless Dusk" CreatureId="10095" X="-38544" Y="-35244" Z="-380" MapId="jeryoung_p" />
+	
+	<PickUpQuest QuestId="349" QuestName="There Will Be Bloody Jiangshi" CreatureId="10096" CreatureName="Moyong Jung" X="-37468" Y="-34972" Z="-388" Map="jeryoung_p" CommunicatorPickUp="true" />
+
+	<ReadLetter Condition="not HasQuest(342) and isClass('SoulFighter')" />
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Chapter :  -->	
+	
+	
+	<Stop Message="stop" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Stop Message="End of Line" />
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</Profile>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Profile Name="Starting Zone [Kick]" Author="Kickazz006" Version="1.0.0.1">
+	
+	<!--
+	<RequiresPlugin Name="QuestHub" MinVersion="1.0.0.1" DownloadUrl="NULL" />
+	<If Condition="Variables.QuestHub == None">
+		<Exec Code="LoadQuestHubSettings()" /> 
+	</If>
+	-->
+	
+	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
+		<SkipCutscene />
+	</DoWhen>
+	<Reference>
+		<UseItem QuestId="0" Items="610100,610101,610102,610103,610104,610105" Display="Equip Pre-Hongmoon Weapon" Equip="true" RefName="PreHongmoonWeapon" />
+	</Reference>
+	
+	<!-- Initial Quest - 221 - Chapter 1: Awakenings -->
+	<If Condition="HasQuest(221) and not IsQuestComplete(221)" >
+		<InputAction QuestId="221" QuestStep="1" RawKey="Escape" NumTimes="2" />
+		<Interact QuestId="221" QuestStep="1" QuestName="Chapter 1: Awakenings" CreatureId="npc:CH_JinYoung_0001" X="-12704" Y="37056" Z="2332" Map="startzone_p" /> <!-- Jinyung -->
+		<Interact QuestId="221" QuestStep="2" InteractRange="1" CreatureId="zoneenv2:e_onoff_uniformbox_re_01" X="-12612" Y="36964" Z="2392" Map="startzone_p" /> <!-- Take Hongmoon Uniform -->
+		
+		<UseItem QuestId="221" QuestStep="3" Items="910000" Equip="true" SkipMissing="false" Display="Equip Hongmoon Uniform" /> <!-- Equip -->
+
+		<Interact QuestId="221" QuestStep="4" InteractRange="0.5" QuestName="Chapter 1: Awakenings" CreatureId="npc:ch_jinyoung_0001" X="-12704" Y="37056" Z="2332" Map="startzone_p" /> <!-- Jinyung -->
+		<MoveTo QuestId="221" QuestStep="5" CreatureId="npc:ch_jinyoung_0001" X="-12421" Y="36645" Z="2336" Map="startzone_p" /> <!-- Follow Jinyung -->
+
+		<!-- ISSUES CLICKING HIM - VERIFY MESH -->
+		<Interact QuestId="221" QuestStep="6" InteractRange="2" QuestName="Chapter 1: Awakenings" CreatureId="zoneenv2:e_onoff_stbed_re_01" X="-12636" Y="36672" Z="2332" Map="startzone_p" /> <!-- Gilhong -->
+	</If>
+	<TurnInQuest QuestId="221" QuestStep="7" InteractRange="1" QuestName="Chapter 1: Awakenings" CreatureId="npc:ch_gilhong_0003" X="-12636" Y="36672" Z="2332" Map="startzone_p" /> <!-- Gilhong -->
+	<!-- Auto Accept Quest - Chapter 2: Morning Time at Heaven's Reach -->
+	
+	<!-- Chapter 2: Morning Time at Heaven's Reach -->
+	<TurnInQuest QuestId="222" InteractRange="1" QuestName="Chapter 2: Morning Time at Heaven's Reach" CreatureId="npc:ch_jinyoung_0001" X="-12180" Y="36944" Z="2332" Map="startzone_p" /> <!-- Jinyung -->
+	
+	<!-- Chapter 3 Looking for Lusung -->
+	<If Condition="HasQuest(223) and not IsQuestComplete(223)" >
+		<Interact QuestId="223" QuestStep="2" QuestName="Chapter 3: Looking for Lusung" CreatureId="npc:ch_yungmook_0001" X="-10568" Y="39560" Z="2148" Map="startzone_p" /> <!-- Yungmuk -->
+	</If>
+	<TurnInQuest QuestId="223" InteractRange="1" QuestName="Chapter 3: Looking for Lusung" CreatureId="npc:ch_musung_0001" X="-8052" Y="33896" Z="2632" Map="startzone_p" /> <!-- Brother Lusung -->
+	
+	<!-- Chapter 4 Master Summons -->
+	<If Condition="HasQuest(224) and not IsQuestComplete(224)" > <!-- All but Summoner -->
+		<Interact QuestId="224" QuestStep="2" QuestName="Chapter 4: Master Hong's Summons" CreatureId="npc:ch_hongsukkeun_0001" X="-8862" Y="38972" Z="2360" Map="startzone_p" />
+		<MoveTo QuestId="224" QuestStep="3" QuestName="Chapter 4: Master Hong's Summons" CreatureId="zoneenv2:e_onoff_bookshelf_re_01" X="-7228" Y="37680" Z="2740" Map="startzone_p" /> <!-- verify this works -->
+		<Interact QuestId="224" QuestStep="4" QuestName="Chapter 4: Master Hong's Summons" CreatureId="zoneenv2:e_onoff_bookshelf_re_01" X="-7400" Y="37568" Z="2752" Map="startzone_p" /> <!-- Get Book -->
+		<InputAction QuestId="224" QuestStep="5" Action="ToggleSkillBook" NumTimes="2" /> <!-- Skillbook -->
+		
+		<Interact QuestId="224" QuestStep="6" QuestName="Chapter 4: Master Hong's Summons" CreatureId="npc:ch_hongsukkeun_0001" X="-7228" Y="37680" Z="2740" Map="startzone_p" /> <!-- Hong -->
+		<!-- non summoners skip these -->
+		<MoveTo QuestId="224" QuestStep="7" CreatureId="npc:ch_hongsukkeun_0001" X="-7714.814" Y="38007.76" Z="2739.65" Map="startzone_p" /> <!-- Hong -->
+		<!-- Completes and Auto Accept - Chapter 5: Disciple of the Hongmoon School -->
+	</If>
+	<If Condition="HasQuest(244) and not IsQuestComplete(244)" > <!-- Summoner -->
+		<!-- CODE SUMMONER -->
+	</If>
+	
+	<!-- I borrowed the class specific stuff from zzi until I can re-write (Ch 5-6) -->
+	<!-- Chapter 5: Disciple of the Hongmoon School -->
+	<!-- Step 3 thought it was completed (Soul Fighter)... change that to turn in quest? Verify! -->
+	<If Condition="HasQuest(237) or HasQuest(252) or HasQuest(225) or HasQuest(231) or HasQuest(234) or HasQuest(228) or HasQuest(245) or HasQuest(1224) or HasQuest(328)" > <!-- All, diff QID's -->
+		<If Condition="HasQuest(328) and not IsQuestComplete(328)" > <!-- Soul Fighter --> 
+			<!-- Issues navigating here, verify bridge at: X="-9518" Y="40948" Z="2000" -->
+			<Interact QuestId="328" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="328" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="328" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8474" Y="44215" Z="2226" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(237) and not IsQuestComplete(237)" >
+			<Interact QuestId="237" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="237" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="237" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(252) and not IsQuestComplete(252)" >
+			<Interact QuestId="252" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="252" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="252" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(225) and not IsQuestComplete(225)" >
+			<Interact QuestId="225" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="225" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="225" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(231) and not IsQuestComplete(231)" >
+			<Interact QuestId="231" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="231" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="231" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(234) and not IsQuestComplete(234)" >
+			<Interact QuestId="234" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="234" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="234" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(228) and not IsQuestComplete(228)" >
+			<Interact QuestId="228" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="228" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="228" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(245) and not IsQuestComplete(245)" >
+			<Interact QuestId="245" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="245" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="245" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<If Condition="HasQuest(1224) and not IsQuestComplete(1224)" >
+			<Interact QuestId="1224" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> <!-- Yungmuk -->
+			<!-- Wait 5 secs -->
+			<UseItem QuestId="1224" QuestStep="2" RefTag="PreHongmoonWeapon" /> <!-- Get Weapon -->
+			<MoveTo QuestId="1224" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> <!-- Yungmuk -->
+		</If>
+		<!-- Chapter 5: Disciple of the Hongmoon School 
+		<If Condition="HasQuest(Variables.ClassQuestId = QuestSelect(237, 252, 225, 231, 234, 328, 228, 245, 1224))" > 
+			<Exec Code="Variables.ClassQuestId = QuestSelect(237, 252, 225, 231, 234, 328, 228, 245, 1224)" />
+			<Interact QuestId="328" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-9020" Y="42564" Z="2228" Map="startzone_p" /> 
+			<UseItem QuestId="328" QuestStep="2" RefTag="PreHongmoonWeapon" /> 
+			<MoveTo QuestId="328" QuestStep="3" CreatureId="npc:ch_youngmook_0009" Display="Combat Tutorial" X="-8468" Y="44228" Z="2232" Map="startzone_p" /> 
+		</If>
+		-->
+	</If>
+	
+	
+	<!-- Chapter 6: Training Begins (Class Specific) --> 
+	<If Condition="HasQuest(334) or HasQuest(238) or HasQuest(253) or HasQuest(226) or HasQuest(232) or HasQuest(235) or HasQuest(229) or HasQuest(1225) or HasQuest(246)" > <!-- All, diff QID's -->
+	 <Stop Message="Manually complete the class specific stuff" />
+		<While Condition="HasQuest(334) and not IsQuestComplete(334)"> <!-- Soul Fighter (needs major re-work) -->
+			<Interact QuestId="334" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<!--
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="334" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="334" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="334" QuestStep="4" CreatureId="npc:CH_WB_YoungMook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			-->
+			<CombatCombo QuestId="334" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_RedMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="SoulFighter_Attack_JusticePunch_Lv1" />
+				<CastSkill Alias="SoulFighter_Attack_StrongPunch_Lv1" />
+				<CastSkill Alias="SoulFighter_Attack_PowerAttack_Lv1" />
+				<CastSkill Alias="SoulFighter_Attack_PowerstepPunch_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="334" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_bluemokujin_0001" Approach="true" />
+				<CastSkill Alias="SoulFighter_Attack_JusticePunch_Lv1" />
+				<While Condition="not TargetIsCasting()" />
+				<CastSkill Alias="SoulFighter_Attack_LeftCounter_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="334" QuestStep="4" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_bluemokujin_0006" Distance="10" Approach="true" />
+				<CastSkill Alias="SoulFighter_Attack_KungFuStance_Lv1" />
+				<CastSkill Alias="SoulFighter_Force_Frostenergy_Lv1" />
+			</CombatCombo>
+		</While>
+		<If Condition="HasQuest(238) and not IsQuestComplete(238)"> <!-- Assassin -->
+			<Interact QuestId="238" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="238" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="238" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="238" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p"><![CDATA[
+	TargetByAlias('mh_redmokujin_0001')
+	ApproachTarget()
+	CastByAlias('Assassin_Disturb_MistSlash_Lv1')
+	CastByAlias('Assassin_Disturb_MoonlightSlash_Lv1')
+	CastByAlias('Assassin_Disturb_DewSlash_Lv1')
+	CastByAlias('Assassin_Hide_Mine_Lv1')
+	CastByAlias('Assassin_Hide_Mine_Lv1')
+	while OnCooldown('Assassin_Hide_Mine_Lv1'):
+		time.sleep(0.2)
+	]]></CombatCombo>
+			<CombatCombo QuestId="238" QuestStep="3" X="-8768" Y="44456" Z="2220" Map="startzone_p"><![CDATA[
+	MoveToWithin(-8462.5, 44205, 2226, "startzone_p", 5)
+	while OnCooldown('Assassin_Hide_SpineStab_Lv1'):
+		time.sleep(0.2)
+	TargetByAlias('mh_bluemokujin_0001')
+	CastByAlias('Assassin_Disturb_Dash_Lv1')
+	CastByAlias('Assassin_Hide_SpineStab_Lv1')
+	]]></CombatCombo>
+		</If>
+		<If Condition="HasQuest(253) and not IsQuestComplete(253)"> <!-- Blade Dancer -->
+			<Interact QuestId="253" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="253" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="253" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="253" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="npc:MH_RedMoKuJin_0001" />
+				<CastSkill Alias="SwordMaster_Sword_vertical_cut_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="253" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="npc:MH_RedMoKuJin_0003" Approach="true" />
+				<Target CreatureId="pnc:MH_MoKuJin_001" Approach="true" />
+				<CastSkill Alias="SwordMaster_Sword_Rushing_Wind_Lv1" />
+				<CastSkill Alias="SwordMaster_Sword_spin_slash_Lv1" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(226) and not IsQuestComplete(226)"> <!-- Blade Master -->
+			<Interact QuestId="226" QuestStep="1" QuestName="Chapter 6: Training Begins" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="226" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="226" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="226" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="npc:MH_RedMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="BladeMaster_Sword_Rushing_Wind_LV1" />
+				<CastSkill Alias="BladeMaster_Sword_blood_Wind_LV1" />
+				<CastSkill Alias="BladeMaster_Sword_storm_wind_LV1" />
+				<CastSkill Alias="BladeMaster_Sword_stab_LV1" />
+			</CombatCombo>
+			<CombatCombo QuestId="226" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="npc:MH_BlueMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="BladeMaster_Sword_Rushing_Wind_LV1" />
+				<CastSkill Alias="BladeMaster_Sword_blocking_LV1" />
+				<CastSkill Alias="BladeMaster_Sword_stab_LV1" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(232) and not IsQuestComplete(232)"> <!-- Destroyer -->
+
+			<Interact QuestId="232" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="232" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="232" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="232" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_RedMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="Destroyer_Protection_Judgement_Lv1" />
+				<CastSkill Alias="Destroyer_Destruction_Destruction_Lv1" />
+				<CastSkill Alias="Destroyer_Protection_Nemesis_Lv1" />
+				<CastSkill Alias="Destroyer_Protection_Axe_Chop_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="232" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_redmokujin_0003" Distance="1" Approach="true" />
+				<Target CreatureId="pnc:mh_mokujin_0001" Distance="1" Approach="true" />
+				<CastSkill Alias="Destroyer_Protection_Judgement_Lv1" />
+				<CastSkill Alias="Destroyer_Destruction_Destruction_Lv1" />
+				<CastSkill Alias="Destroyer_Protection_Nemesis_Lv1" />
+				<CastSkill Alias="Destroyer_Protection_Raging_Wind_Lv1" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(235) and not IsQuestComplete(235)"> <!-- Force Master -->
+
+			<Interact QuestId="235" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="235" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="235" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="235" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_RedMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fast_energy_missile_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="235" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_RedMoKuJin_0003" Approach="true" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_ball_instant_Lv1" />
+				<CastSkill Alias="ForceMaster_Deal_fire_blast_Lv1" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(229) and not IsQuestComplete(229)"> <!-- Kung Fu Master -->
+			<Interact QuestId="229" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44224" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="229" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="229" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="226" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_bluemokujin_0006" Approach="true" />
+				<CastSkill Alias="KungfuMaster_Attack_JusticePunch_Lv1" />
+				<While Condition="not TargetIsCasting()" />
+				<CastSkill Alias="KungfuMaster_Attack_Counterenemy_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="226" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_bluemokujin_0001" Approach="true" />
+				<CastSkill Alias="KungfuMaster_Attack_JusticePunch_Lv1" />
+				<CastSkill Alias="KungfuMaster_Attack_StrongPunch_Lv1" />
+				<CastSkill Alias="KungfuMaster_Attack_PowerAttack_Lv1" />
+				<CastSkill Alias="KungfuMaster_Attack_PowerfulAttack_Lv1" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(1225) and not IsQuestComplete(1225)"> <!-- Warlock -->
+			<Interact QuestId="1225" QuestStep="1" CreatureId="npc:ch_youngmook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="1225" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="1225" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="1225" QuestStep="4" CreatureId="npc:CH_YoungMook_0009" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="1225" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_redmokujin_0001" Approach="true" />
+				<CastSkill Alias="Warlock_Spell_TargetBeam_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="1225" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_BlueMoKuJin_0001" Approach="true" />
+				<CastSkill Alias="Warlock_Spell_Rcombo_Lv1" />
+				<While Condition="not TargetIsCasting()" />
+				<CastSkill Alias="Warlock_Spell_Counter_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="1225" QuestStep="4" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_bluemokujin_0001" Approach="true" />
+				<CastSkill Alias="Warlock_Summon_Advent_Lv1" />
+				<While Condition="OnCooldown('Warlock_Summon_Advent_Lv1')" />
+			</CombatCombo>
+		</If>
+		<If Condition="HasQuest(246) and not IsQuestComplete(246)"> <!-- Summoner -->
+			<Interact QuestId="246" QuestStep="1" CreatureId="npc:ch_youngmook_0013" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			<If Condition="Variables.QuestHub != None and Variables.QuestHub.SkipForcedCombat">
+				<Interact QuestId="246" QuestStep="2" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="246" QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0002" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+				<Interact QuestId="246" QuestStep="4" CreatureId="npc:CH_WB_YoungMook_0001" X="-8468" Y="44228" Z="2220" Map="startzone_p" />
+			</If>
+			<CombatCombo QuestId="246" QuestStep="2" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:mh_redmokujin_0002" Approach="true" />
+				<CastSkill Alias="Summoner_Summon_Hornet_Lv1" />
+				<CastSkill Alias="Summoner_Summon_Rose_Lv1" />
+				<CastSkill Alias="Summoner_Summon_Butterfly_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="246" QuestStep="3" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_BlueMokuJin_0004" Distance="10" Approach="true" />
+				<CastSkill Alias="Summoned_Summon_Tackle_Lv1" />
+			</CombatCombo>
+			<CombatCombo QuestId="246" QuestStep="4" X="-8468" Y="44228" Z="2220" Map="startzone_p">
+				<Target CreatureId="pnc:MH_BlueMokuJin_0004" Distance="2" Approach="true" />
+				<CastSkill Alias="Summoner_Summon_Ivy_Lv1" />
+				<CastSkill Alias="Summoned_Summon_ThornVine_Lv1" />
+			</CombatCombo>
+		</If>
+	</If>
+	<!-- End Chapter 6: Training Begins (Class Specific) -->
+	
+	<!-- Chapter 7: The Proving Grounds -->
+	<!-- Mesh and targetting dummies needs fixing -->
+	<If Condition="HasQuest(227)" > <!-- All but Summoner -->
+		<ReadLetter QuestId="227" QuestStep="1" />
+		<Interact QuestId="227" QuestStep="2" QuestName="Chapter 7: The Proving Grounds" CreatureId="npc:CH_WB_YoungMook_0001" X="-8472" Y="44228" Z="2228" Map="startzone_p" />
+		<!-- Mesh issue back down the stairs -->
+		<!--<MoveTo CreatureId="npc:CH_WB_YoungMook_0001" QuestStep="3" X="-19076" Y="44826" Z="1214" Map="startzone_p" />-->
+		<MoveTo QuestStep="3" CreatureId="npc:CH_WB_YoungMook_0001" X="-17042" Y="43902" Z="1283" Map="startzone_p" />
+
+		<!-- Shared combat -->
+		<!-- MoveTo X="-18726" Y="44855" Z="1273" -->
+		<!-- Move through -->
+		<!-- MoveTo X="-18838" Y="44863" Z="1255" -->
+		<Grind QuestId="227" QuestStep="4" CreatureIds="9533"> <!-- Training Dummies -->
+			<Hotspot X="-21312" Y="44148" Z="1012" Range="10" Map="startzone_p" />
+		</Grind>
+		<Grind QuestId="227" QuestStep="5" CreatureIds="10255"> <!-- Masked Assassin -->
+			<Hotspot X="-21312" Y="44148" Z="1012" Range="10" Map="startzone_p" />
+		</Grind>
+
+		<!-- BOT: Death Auto releases -->
+		<!-- Revive Use items -->
+		<InputAction QuestId="227" QuestStep="6" ActionKeybind="SkillSlot1" />
+		<InputAction QuestId="227" QuestStep="7" ActionKeybind="ItemSlot4" />
+		<TurnInQuest QuestId="227" QuestName="Chapter 7: The Proving Grounds" CreatureId="npc:ch_musung_0001" X="-21308" Y="44144" Z="1012" Map="startzone_p" /> <!-- Lusung -->
+	</If>
+	<If Condition="HasQuest(247)" > <!-- Summoner -->
+		<ReadLetter QuestId="247" QuestStep="1" />
+
+		<Interact QuestId="247" QuestStep="2" QuestName="Chapter 7: The Proving Grounds" CreatureId="npc:CH_WB_YoungMook_0001" X="-8472" Y="44228" Z="2228" Map="startzone_p" />
+		<!-- <Interact QuestId="247" QuestStep="2" QuestName="Chapter 7: The Proving Grounds Summoner" CreatureId="npc:CH_WB_YoungMook_0001" X="-9016" Y="42568" Z="2228" Map="startzone_p" /> -->
+		<MoveTo CreatureId="npc:CH_WB_YoungMook_0001" QuestStep="3" X="-19076" Y="44826" Z="1214" Map="startzone_p" />
+
+		<!-- shared combat -->
+		<Grind QuestId="247" QuestStep="4" CreatureIds="9533">
+			<Hotspot X="-21312" Y="44148" Z="1012" Range="10" Map="startzone_p" />
+		</Grind>
+		<Grind QuestId="247" QuestStep="5" CreatureIds="10255">
+			<Hotspot X="-21312" Y="44148" Z="1012" Range="10" Map="startzone_p" />
+		</Grind>
+
+		<!-- revive use items -->
+		<InputAction QuestId="247" QuestStep="6" ActionKeybind="SkillSlot1" />
+	
+		<!-- summoners revive cat then use item -->
+		<InputAction QuestId="247" QuestStep="7" RawKey="SkillStance" />
+		<InputAction QuestId="247" QuestStep="8" ActionKeybind="ItemSlot4" />
+		<TurnInQuest QuestId="247" CreatureId="npc:ch_musung_0001" X="-21312" Y="44144" Z="1012" Map="startzone_p" />
+	</If>
+	
+	<!-- Chapter 8: Twilight's Edge -->
+	<If Condition="HasQuest(243) and not IsQuestComplete(243)">
+		<MoveTo QuestId="243" QuestStep="1" CreatureId="npc:ch_musung_0005" X="-17609.84" Y="44069.84" Z="1280.839" Map="startzone_p" /> <!-- Lusung --> <!-- StartZone_Dun -->
+		<MoveTo QuestId="243" QuestStep="2" CreatureId="null" X="-13801.33" Y="42965.59" Z="1246.616" Map="startzone_p" /> <!-- Bridge - cutscene --> <!-- StartZone -->
+		<Grind QuestId="243" QuestStep="3" CreatureIds="9620">
+			<Hotspot X="-10275" Y="39655" Z="2155" Range="100" Map="startzone_p" /> <!-- StartZone -->
+		</Grind>
+		<!-- Cutscene, loading, Cutscene, loading, new map -->
+	</If>
+	
+	<!-- Zone: Veridian Coast -->
+	<!-- Chapter 1: From the Water --> <!-- Map: MangJaSup -->
+	<If Condition="HasQuest(301) and not IsQuestComplete(301)">
+		<Interact QuestId="301" QuestStep="1" QuestName="Chapter 1: From the Water" CreatureId="10071" X="-54128" Y="-50880" Z="-3016" Map="MangJaSup_p" /> <!-- Namsoyoo -->
+		<Interact QuestId="301" QuestStep="2" QuestName="Chapter 1: From the Water" CreatureId="10257" X="-54736" Y="-51532" Z="-3064" Map="MangJaSup_p" /> <!-- Ko Suljun -->
+		<MoveTo QuestId="301" QuestStep="3" CreatureId="10258" X="-56428" Y="-52344" Z="-3148" Map="MangJaSup_p" /> <!-- Gungwon -->
+		<Interact QuestId="301" QuestStep="4" QuestName="Chapter 1: From the Water" CreatureId="10258" X="-56428" Y="-52344" Z="-3148" Map="MangJaSup_p" /> <!-- Gungwon -->
+		<!-- Cutscene -->
+	</If>
+	
+	
+	<!-- Load Profile - Viridian Coast [Kick].xml -->
+	
+	<Stop Message="Load Viridian Coast [Kick].xml profile" />
+	
+</Profile>
