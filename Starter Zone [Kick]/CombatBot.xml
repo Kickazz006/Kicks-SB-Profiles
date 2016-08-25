@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile Name="Combat Bot" Author="Bossland GmbH" Version="1.0">
+	<While Condition="1==1" >
+		<Wait Time="3600" /> <!-- Essentially do nothing, and let the bot handle any combat tasks. -->
+	</While>
+</Profile>
