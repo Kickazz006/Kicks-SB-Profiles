@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Profile Name="Gloomdross Forest [Kick]" Author="Kickazz006" Version="1.0.0.1">
+
+<!-- in game shortcut keys:
+
+	Register("Interact", Keys.I, InteractCallback);
+	Register("TurnIn", Keys.T, TurnInCallback);
+	Register("PickUp", Keys.P, PickUpCallback);
+	Register("MoveTo", Keys.M, MoveToCallback);
+	Register("GrindHotspot", Keys.H, GrindHotspotCallback);
+	//Register("Jump", Keys.J, JumpCallback);
+	//Register("Wait", Keys.W, WaitCallback);
+   
+-->
+
+<!-- 
+Dev: Give me the ability to right click the dev tools ... grr
+
+MapName: jeryoung_p
+ZoneId: 2624
+Can I use ZoneId as MapId ??
+If not, how to get it?
+
+Add in CreatureName="" to all of the valid tags
+-->
+	
+	<!-- 
+	<RequiresPlugin Name="QuestHub" MinVersion="1.0.0.1" DownloadUrl="NULL" />
+	<If Condition="Variables.QuestHub == None">
+		<Exec Code="LoadQuestHubSettings()" /> 
+	</If>
+	-->
+	
+	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
+		<SkipCutscene />
+	</DoWhen>
+	<Reference>
+		<UseItem QuestId="0" Items="610100,610101,610102,610103,610104,610105" Display="Equip Pre-Hongmoon Weapon" Equip="true" RefName="PreHongmoonWeapon" />
+	</Reference>
+	
+	<!-- Gloomdross Forest -->
+	
+	<!-- Chapter 11: Gone Fishing -->
+	<If Condition="HasQuest(310) and not IsQuestComplete(310)">
+		<Interact QuestId="310" QuestStep="1" QuestName="Chapter 11: Gone Fishing" CreatureId="10534" CreatureName="Injured Villager" X="-31051.89" Y="-7568.98438" Z="-2688.41748" MapId="jeryoung_p" /> <!-- Cutscene -->
+		<Grind QuestId="310" QuestStep="2" CreatureIds="10001,10000,9999," CreatureName="Corrupted" > 
+			<Hotspot X="-33784.57" Y="-855.712" Z="-2828.58" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-32393.4414" Y="1355.19543" Z="-2856.17725" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-28974.4336" Y="1276.22375" Z="-2841.41748" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-28125.7715" Y="894.033264" Z="-2798.71436" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-29337.502" Y="-3287.3064" Z="-2567.707" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-31078.7246" Y="-1643.5354" Z="-2763.27637" Range="100" Map="jeryoung_p" />
+		</Grind>
+		<MoveTo QuestId="310" QuestStep="3" QuestName="Chapter 11: Gone Fishing" X="-32120.7188" Y="755.897461" Z="-2860.83545" MapId="jeryoung_p" /> <!-- Dochun -->
+		<Interact QuestId="310" QuestStep="4" QuestName="Chapter 11: Gone Fishing" CreatureId="10522,10520" CreatureName="Desperate Villager" MapId="jeryoung_p" >
+			<Hotspot X="-33784.57" Y="-855.712" Z="-2828.58" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-32393.4414" Y="1355.19543" Z="-2856.17725" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-28974.4336" Y="1276.22375" Z="-2841.41748" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-28125.7715" Y="894.033264" Z="-2798.71436" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-29337.502" Y="-3287.3064" Z="-2567.707" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-31078.7246" Y="-1643.5354" Z="-2763.27637" Range="100" Map="jeryoung_p" />
+		</Interact>
+		<Interact QuestId="310" QuestStep="5" QuestName="Chapter 11: Gone Fishing" CreatureId="10519" CreatureName="Gungwon" X="-26516.87" Y="-2340.967" Z="-2230.85" MapId="jeryoung_p" />
+		<MoveTo QuestId="310" QuestStep="6" QuestName="Chapter 11: Gone Fishing" X="-29945.9883" Y="-11327.0957" Z="-3642.666"  MapId="jeryoung_p" /> <!-- Jinsoyun -->
+		<!-- We are stuck here for 30s unable to move -->
+		<Grind QuestId="310" QuestStep="7" CreatureIds="10009" CreatureName="Corrupted Cave Augerite" > 
+			<Hotspot X="-30428" Y="-12036" Z="-3572" Range="100" Map="jeryoung_p" />
+		</Grind>
+		<Interact QuestId="310" QuestStep="8" QuestName="Chapter 11: Gone Fishing" CreatureId="10518" CreatureName="Dochun" X="-30292.4551" Y="-11609.5586" Z="-3612.08667" MapId="jeryoung_p" />
+		<!-- Escort Dunchun to Tainted Grotto - Step 9.  There's a flame gun that drops that we can pickup and push button 4 to use... dunno how to script that. MoveTo: X="-27988.9453" Y="-5107.67529" Z="-3325.5105"  -->
+	</If>
+	<TurnInQuest QuestId="310" QuestStep="10" QuestName="Chapter 11: Gone Fishing" CreatureId="10537" CreatureName="Dochun" X="-27025.19" Y="-2174.0686" Z="-2231.23047" MapId="jeryoung_p" />
+	<!-- 311 - Chapter 12: Deep in the Gloomdross - Lvl 10 required -->
+	<!-- Read Letter: 347 - The Way of the Soul Fighter: Part 4 -->
+	<ReadLetter Condition="not HasQuest(347) and not IsQuestComplete(347) and isClass('SoulFighter')" />
+
+	<!-- Kick Stopped here today -->
+	
+
+	<Stop Message="stop" />
+	
+
+<!--
+
+	<Interact QuestId="" QuestStep="" QuestName="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
+
+	<Grind QuestId="" QuestStep="" CreatureIds="" CreatureName="" > 
+		<Hotspot  Range="100" Map="jeryoung_p" />
+	</Grind>
+
+
+
+
+	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+
+	<If Condition="HasQuest() and not IsQuestComplete()">
+	
+	</If>
+	
+		<MoveTo QuestId="" QuestStep=""  MapId="jeryoung_p" />
+		
+	<ReadLetter Condition="not HasQuest() and not IsQuestComplete() and isClass('SoulFighter')" />
+		
+		
+
+		<ForcedCombat QuestId="" QuestStep="" CreatureId="" >
+			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
+			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
+			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
+		</ForcedCombat>
+
+		<Stop Message="stop" />
+		<Stop Condition="not IsQuestComplete()" Message="Complete the quest and push start" />
+		
+		
+	<Loot Condition="not IsObjectiveComplete(404, 1)" XYZ="" MapId="jeryoung_p" Range="100" From="1234,4321" />
+		
+
+		
+		
+		<Carry QuestId="" QuestStep=""  MapId="jeryoung_p"  CreatureId="" RequiresInteraction="true" >
+			<Hotspot  MapId="jeryoung_p" Range="40" Aliases="ids" />
+		</Carry>
+		
+		<Button QuestId="" QuestStep="" Shortcut="ToggleGem" />
+		
+-->	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Stop Message="End of Line" />
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</Profile>
