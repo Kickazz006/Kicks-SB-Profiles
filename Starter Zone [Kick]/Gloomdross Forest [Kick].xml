@@ -12,30 +12,11 @@
 	//Register("Wait", Keys.W, WaitCallback);
    
 -->
-
-<!-- 
-Dev: Give me the ability to right click the dev tools ... grr
-
-MapName: jeryoung_p
-ZoneId: 2624
-Can I use ZoneId as MapId ??
-If not, how to get it?
-
-Add in CreatureName="" to all of the valid tags
--->
-	
-	<!-- 
-	<RequiresPlugin Name="QuestHub" MinVersion="1.0.0.1" DownloadUrl="NULL" />
-	<If Condition="Variables.QuestHub == None">
-		<Exec Code="LoadQuestHubSettings()" /> 
-	</If>
-	-->
 	
 	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
 		<SkipCutscene />
 	</DoWhen>
 	<Reference>
-		<UseItem QuestId="0" Items="610100,610101,610102,610103,610104,610105" Display="Equip Pre-Hongmoon Weapon" Equip="true" RefName="PreHongmoonWeapon" />
 	</Reference>
 	
 	<!-- Gloomdross Forest -->
@@ -74,22 +55,181 @@ Add in CreatureName="" to all of the valid tags
 	<!-- Read Letter: 347 - The Way of the Soul Fighter: Part 4 -->
 	<ReadLetter Condition="not HasQuest(347) and not IsQuestComplete(347) and isClass('SoulFighter')" />
 
-	<!-- Kick Stopped here today -->
+	<!-- Whalesong Cove -->	
+	<PickUpQuest QuestId="390" QuestName="Miner Rescue" CreatureId="10277" CreatureName="Gohtai" X="-27055.2617" Y="-2432.614" Z="-2230.27441" Map="jeryoung_p" />
+	<PickUpQuest QuestId="363" QuestName="Giant Enemy Crabs" CreatureId="10097" CreatureName="Bujang" X="-26335.5762" Y="-2408.51221" Z="-2230.85" Map="jeryoung_p" />
+	<PickUpQuest QuestId="415" QuestName="Socket to Me" CreatureId="10190" CreatureName="Hwang Jinbang" X="-26719.8672" Y="-2069.42773" Z="-2230.85" Map="jeryoung_p" />
+	<If Condition="HasQuest(415) and not IsQuestComplete(415)"> <!-- Socket to Me -->
+		<Stop Message="Equip a Gem in a Weapon (Press I, manage equipment --> equip gem)" /> <!-- step 1 -->
+		<Interact QuestId="415" QuestName="Socket to Me" QuestStep="2" CreatureId="10190" CreatureName="Hwang Jinbang" X="-26719.8672" Y="-2069.42773" Z="-2230.85" Map="jeryoung_p" />
+		<Stop Message="Equip a Gem in a Weapon (Press I, manage equipment --> unequip gem)" /> <!-- step 3 -->
+	</If>
+	<TurnInQuest QuestId="415" QuestName="Socket to Me" QuestStep="4" CreatureId="10190" CreatureName="Hwang Jinbang" X="-26719.8672" Y="-2069.42773" Z="-2230.85" Map="jeryoung_p" />
+	
+	<!-- Giant Enemy Crabs -->
+	<!-- Interact with Weaponrack and get a gun, then kill crabs - ( 379,380 ) - - - 381 - X="-29178.2715" Y="1240.33765" Z="-2848.96436" -->
+	<!-- Stand here and push "r" or "1" - both do the same thing - X="-29058.0469" Y="1540.01611" Z="-2835.109" -->
+	<!-- Grinding them also works just fine -->
+	<Grind QuestId="363" QuestStep="1" CreatureIds="10004" CreatureName="Corrupted Beach Crab" > 
+		<Hotspot X="-28898.03" Y="2012.5907" Z="-2839.171" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-31062.6211" Y="2683.04761" Z="-2895.61743" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-32530.9453" Y="1457.96338" Z="-2865.04761" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-34007.4727" Y="-318.921448" Z="-2887.17358" Range="100" Map="jeryoung_p" />		
+	</Grind>
+	<TurnInQuest QuestId="363" QuestName="Giant Enemy Crabs" QuestStep="1" CreatureId="10097" CreatureName="Bujang" X="-26335.5762" Y="-2408.51221" Z="-2230.85" Map="jeryoung_p" />
+	<!-- End of Whalesong Cove -->	
+	
+	<!-- Gloomdross Lookout -->
+	<TurnInQuest QuestId="390" QuestName="Miner Rescue" QuestStep="1" CreatureId="10101" CreatureName="Buyong" X="-14280.3066" Y="-7454.358" Z="-1707.35681" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="373" QuestName="Major Rescue" CreatureId="10101" CreatureName="Buyong" X="-14280.3066" Y="-7454.358" Z="-1707.35681" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="374" QuestName="Gold and Shackles" CreatureId="10172" CreatureName="Ban Yongbu" X="-14387.6328" Y="-7341.71533" Z="-1706.83582" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="385" QuestName="Dressed to Kill" CreatureId="10102" CreatureName="Ryuna" X="-14165.7813" Y="-7333.648" Z="-1703.82861" Map="jeryoung_p" />
+	<TurnInQuest QuestId="385" QuestName="Dressed to Kill" QuestStep="1" CreatureId="10321" CreatureName="Chung Unnam" X="-16933.94" Y="-6978.75635" Z="-1643.45361" MapId="jeryoung_p" />
+	
+	<!-- Gold and Shackles -->
+	<If Condition="HasQuest(374) and not IsQuestComplete(374)"> <!-- Repeatable -->
+		<Interact QuestId="374" QuestName="Gold and Shackles" QuestStep="1" CreatureIds="10407,10406" CreatureName="Captive Laborer" MapId="jeryoung_p" >
+			<Hotspot  Range="100" Map="jeryoung_p" />
+			<Hotspot X="-10502.5068" Y="5999.822" Z="-3264.61084" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-11872.1973" Y="9227.963" Z="-3756.81372" Range="100" Map="jeryoung_p" /> <!-- Gu Du - 1,1 -->
+			<Hotspot X="-10202.5537" Y="9659.904" Z="-4023.40625" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-8705.243" Y="8629.447" Z="-4964.614"  Range="100" Map="jeryoung_p" />
+			<Hotspot X="-9260.416" Y="9119.366" Z="-4972.844" Range="100" Map="jeryoung_p" /> <!-- Ba Dun - 1,2 -->
+			<Hotspot X="-8496" Y="13384" Z="-5380" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-9028.371" Y="13619.5361" Z="-5358.148" Range="100" Map="jeryoung_p" /> <!-- Ug Li - 1,3 -->
+		</Interact>
+	</If>
+	<!-- Major Rescue -->
+	<If Condition="HasQuest(373) and not IsQuestComplete(373)"> <!-- Repeatable -->
+		<Grind QuestId="373" QuestStep="1" CreatureIds="9702,9703,9704" > <!-- Gu Du, Ba Dun, Ug Li --> 
+			<Hotspot X="-11872.1973" Y="9227.963" Z="-3756.81372" Range="100" Map="jeryoung_p" /> <!-- Gu Du - 1,1 -->
+			<Hotspot X="-9260.416" Y="9119.366" Z="-4972.844" Range="100" Map="jeryoung_p" /> <!-- Ba Dun - 1,2 -->
+			<Hotspot X="-9028.371" Y="13619.5361" Z="-5358.148" Range="100" Map="jeryoung_p" /> <!-- Ug Li - 1,3 -->
+		</Grind>
+	</If>
+	<!-- If we don't have our class quest ... and if in Zone 2604, click 814 - Dragon Pulse - X="-9131.181" Y="13638.1162" Z="-5355.15625" - wait for zoning -->
+	<!-- The Way of the Soul Fighter: Part 4 -->
+	<If Condition="HasQuest(347) and isClass('SoulFighter')">
+		<Interact QuestId="347" QuestName="The Way of the Soul Fighter: Part 4" QuestStep="1" CreatureId="22933" CreatureName="Brother Hajoon" X="-9051.309" Y="19071.252" Z="-5755.49365" MapId="jeryoung_p" />
+		<Stop Message="Do Step 2" />
+		<!-- Step 2 - In a Kung Fu stance, counter (Pierce) using Elbow Smash (1), then use the Rear Attach (1) combo against Dusk Adder Overseer Kan Bak - 22940 - X="-8524" Y="18764" Z="-5760" -->
+		<TurnInQuest QuestId="347" QuestName="The Way of the Soul Fighter: Part 4" QuestStep="3" CreatureId="22933" CreatureName="Brother Hajoon" X="-9051.309" Y="19071.252" Z="-5755.49365" MapId="jeryoung_p" />
+		<!-- if in Zone 2749, click 6885 - Dragon Pulse - X="-9041.888" Y="19914.416" Z="-5755.78174" - wait for zoning -->
+	</If>
+	
+	<TurnInQuest QuestId="374" QuestName="Gold and Shackles" QuestStep="2" CreatureId="10172" CreatureName="Ban Yongbu" X="-14387.6328" Y="-7341.71533" Z="-1706.83582" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="367" QuestName="Miner Revenge" QuestStep="2" CreatureId="10172" CreatureName="Ban Yongbu" X="-14387.6328" Y="-7341.71533" Z="-1706.83582" Map="jeryoung_p" /> <!-- Repeatable -->
+	<TurnInQuest QuestId="373" QuestName="Major Rescue" QuestStep="2" CreatureId="10101" CreatureName="Buyong" X="-14280.3066" Y="-7454.358" Z="-1707.35681" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="368" QuestName="The Spore War" CreatureId="10102" CreatureName="Ryuna" X="-14165.7813" Y="-7333.648" Z="-1703.82861" Map="jeryoung_p" />
+
+	<!-- The Spore War -->
+	<If Condition="HasQuest(368) and not IsQuestComplete(368)">
+		<Interact QuestId="368" QuestName="The Spore War" QuestStep="1,2" CreatureIds="424,422,413,421,417,434,432,419,418,423,433,415,420416,414" CreatureName="Silky Mushroom" MapId="jeryoung_p" >
+			<Hotspot X="-16518.6074" Y="-7212.65771" Z="-1660.66931" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-16653.33" Y="-9837.372" Z="-1640.467" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-18798.0273" Y="-8753.717" Z="-1748.82593" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-20761.95" Y="-7570.316" Z="-1803.32776" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-21192.6738" Y="-5236.414" Z="-1852.75378" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-18014.2578" Y="-4941.84131" Z="-1739.78638" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-17368.79" Y="-3274.72534" Z="-1636.772" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-15014.7129" Y="-4375.267" Z="-1627.02454" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-14866.209" Y="-6319.58447" Z="-1696.96545" Range="100" Map="jeryoung_p" />
+		</Interact>
+		<Grind QuestId="368" QuestName="The Spore War" QuestStep="1,1" CreatureIds="9450" CreatureName="Deathcap" > 
+			<Hotspot X="-16518.6074" Y="-7212.65771" Z="-1660.66931" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-16653.33" Y="-9837.372" Z="-1640.467" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-18798.0273" Y="-8753.717" Z="-1748.82593" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-20761.95" Y="-7570.316" Z="-1803.32776" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-21192.6738" Y="-5236.414" Z="-1852.75378" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-18014.2578" Y="-4941.84131" Z="-1739.78638" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-17368.79" Y="-3274.72534" Z="-1636.772" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-15014.7129" Y="-4375.267" Z="-1627.02454" Range="100" Map="jeryoung_p" />
+			<Hotspot X="-14866.209" Y="-6319.58447" Z="-1696.96545" Range="100" Map="jeryoung_p" />
+		</Grind>
+	</If>
+	
+	<!-- Miner Revenge -->
+	<Grind QuestId="367" QuestName="Miner Revenge" QuestStep="1" CreatureIds="9682,9685,9451,9684,9683,9453,9757" CreatureName="Dusk Adders" >
+		<Hotspot X="-16518.6074" Y="-7212.65771" Z="-1660.66931" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-16653.33" Y="-9837.372" Z="-1640.467" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-18798.0273" Y="-8753.717" Z="-1748.82593" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-20761.95" Y="-7570.316" Z="-1803.32776" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-21192.6738" Y="-5236.414" Z="-1852.75378" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-18014.2578" Y="-4941.84131" Z="-1739.78638" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-17368.79" Y="-3274.72534" Z="-1636.772" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-15014.7129" Y="-4375.267" Z="-1627.02454" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-14866.209" Y="-6319.58447" Z="-1696.96545" Range="100" Map="jeryoung_p" />
+	</Grind>
+	
+	<TurnInQuest QuestId="368" QuestName="The Spore War" QuestStep="2" CreatureId="10102" CreatureName="Ryuna" X="-14165.7813" Y="-7333.648" Z="-1703.82861" Map="jeryoung_p" />
+	<Interact QuestId="367" QuestName="Miner Revenge" QuestStep="2" CreatureId="10172" CreatureName="Ban Yongbu" X="-14387.6328" Y="-7341.71533" Z="-1706.83582" Map="jeryoung_p" />
+	<!-- End of Gloomdross Lookout -->
+	
+	<!-- Tanjay Kiln -->
+	<TurnInQuest QuestId="367" QuestName="Miner Revenge" QuestStep="3" CreatureId="10189" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" /> 
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="1" CreatureId="10179" CreatureName="Dochun" X="-7599.801" Y="-11080.6318" Z="593.9994" MapId="jeryoung_p" />
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="2" CreatureId="10182" CreatureName="Wi Wonhong" X="-7599.801" Y="-11080.6318" Z="593.9994" MapId="jeryoung_p" />
+	<!-- Soul Fighter popup - The Way of the Soul Fighter: Part 5 -->
+	<ReadLetter Condition="not HasQuest(348) and not IsQuestComplete(348) and isClass('SoulFighter')" />
+	<PickUpQuest QuestId="375" QuestName="Burning the Dream" CreatureId="10189" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" /> 
+	<PickUpQuest QuestId="378" QuestName="Root of All Evil" CreatureId="10105" CreatureName="Hogum" X="-4540.97" Y="-11000.6592" Z="606.3139" Map="jeryoung_p" />
+	
+	<Interact QuestId="375" QuestName="Burning the Dream" QuestStep="1" CreatureId="10195" CreatureName="Shin Da" X="-4467.09961" Y="-26748.73" Z="258.310547" MapId="jeryoung_p" />
+	
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="3" CreatureId="804" CreatureName="Corrupted Corpse" X="-2744.373" Y="-27261.4922" Z="391.6848" MapId="jeryoung_p" />
+	
+	<!--<Stop Message="Complete step 2 - use torch on Gnarlhorn and Gnarloxes" /> - we can do this without burning.  make sure we push '4' to drop it -->
+	<Grind QuestId="375" QuestName="Burning the Dream" QuestStep="2" CreatureIds="" CreatureName="Gnarls" MapId="jeryoung_p" >
+		<Hotspot X="-3384.02539" Y="-27032.7227" Z="324.647736" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-270.309479" Y="-28661.832" Z="970.891846" Range="100" Map="jeryoung_p" />
+		<Hotspot X="3624" Y="-27992" Z="780" Range="100" Map="jeryoung_p" />
+		<Hotspot X="5527.194" Y="-27194.5352" Z="278.827576" Range="100" Map="jeryoung_p" />
+	</Interact>
+	
+	<Grind QuestId="378" QuestName="Root of All Evil" QuestStep="1" CreatureIds="9839,9717" CreatureName="Dawnwood Lookout, Sprite" > 
+		<Hotspot X="6907.21143" Y="-26918.0313" Z="237.527191" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<!-- if no class quest & if in zone id: 2603, click dragon pulse - 802 - at X="6885.024" Y="-26936.3145" Z="235.893066"  -->
+	
+	<!-- The Way of the Soul Fighter: Part 5 -->
+	<If Condition="HasQuest(348) and isClass('SoulFighter')">
+		<Interact QuestId="348" QuestName="The Way of the Soul Fighter: Part 5" QuestStep="1" CreatureId="22934" CreatureName="Brother Hajoon" X="9424.697" Y="-23139.8145" Z="284.5427" MapId="jeryoung_p" />
+		<Stop Message="Do Step 2" />
+		<!-- Step 2 - In an elemental stance, use Displace (2) to push the enemy, and then use the Burning Tundra (V), Snowball (T) combo against Green Training Dummy - 22941, Red Training Dummy - 22942, Blue Training Dummy - 22943 - X="9032" Y="-23088" Z="276" Range="0.8" -->
+		<TurnInQuest QuestId="348" QuestName="The Way of the Soul Fighter: Part 5" QuestStep="3" CreatureId="22934" CreatureName="Brother Hajoon" X="9415.614" Y="-23110.2012" Z="284.585632" MapId="jeryoung_p" />
+		<!-- if in Zone 2750, click 6886 - Dragon Pulse - X="8143.28" Y="-23016.9688" Z="299.969269" - wait for zoning -->
+	</If>
+	
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="4" CreatureId="10194" CreatureName="Paso" X="-7295.76855" Y="-9458.35" Z="603.0324" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="375" QuestName="Burning the Dream" QuestStep="3" CreatureId="10189" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" /> 
+	<TurnInQuest QuestId="378" QuestName="Root of All Evil" CreatureId="10105" CreatureName="Hogum" X="-4540.97" Y="-11000.6592" Z="606.3139" Map="jeryoung_p" />
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="5" CreatureId="10270" CreatureName="Wi Wonhong" X="-7587.76" Y="-11127.542" Z="595.1505" MapId="jeryoung_p" />
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="6" CreatureId="10445" CreatureName="Ha Jungwang" X="-7537.619" Y="-11289.4023" Z="598.0353" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="421" QuestName="Stepping into the Light" CreatureId="10193" CreatureName="Ha Samik" X="-4385.12451" Y="-10898.7441" Z="602.8487" Map="jeryoung_p" />
+	<PickUpQuest QuestId="389" QuestName="Signed, Sealed, Delivered" CreatureId="10104" CreatureName="Tuyang" X="-5005.645" Y="-10955.0537" Z="624.146851" Map="jeryoung_p" />
+	<PickUpQuest QuestId="388" QuestName="Does That Make Me Crazy" CreatureId="10133" CreatureName="Makgei" X="-6914.623" Y="-11070.9131" Z="592.3207" Map="jeryoung_p" />
+	<PickUpQuest QuestId="412" QuestName="Not a Spider Fan" CreatureId="10405" CreatureName="Jo Gitan" X="-6423.312" Y="-8181.413" Z="571.647644" Map="jeryoung_p" />
+
+	
+	 
+	
+	
 	
 
 	<Stop Message="stop" />
 	
+	<!-- Kick Stopped here today -->
 
 <!--
 
-	<Interact QuestId="" QuestStep="" QuestName="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
+		<Hotspot  Range="100" Map="jeryoung_p" />
+	</Interact>
 
-	<Grind QuestId="" QuestStep="" CreatureIds="" CreatureName="" > 
+	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" > 
 		<Hotspot  Range="100" Map="jeryoung_p" />
 	</Grind>
-
-
-
 
 	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
 	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
