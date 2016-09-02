@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Profile Name="Viridian Coast [Kick]" Author="Kickazz006" Version="1.0.0.1">
-
+<Profile Name="Everdusk [Kick]" Author="Kickazz006" Version="1.0.0.1">
+<!-- Viridian Coast - Everdusk -->
 	
 	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
 		<SkipCutscene />

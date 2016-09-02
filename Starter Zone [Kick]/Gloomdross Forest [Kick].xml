@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Profile Name="Gloomdross Forest [Kick]" Author="Kickazz006" Version="1.0.0.1">
+<!-- Viridian Coast - Gloomdross Forest -->
 
 <!-- in game shortcut keys:
 
@@ -172,7 +173,7 @@
 	<!-- Soul Fighter popup - The Way of the Soul Fighter: Part 5 -->
 	<ReadLetter Condition="not HasQuest(348) and not IsQuestComplete(348) and isClass('SoulFighter')" />
 	<PickUpQuest QuestId="375" QuestName="Burning the Dream" CreatureId="10189" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" /> 
-	<PickUpQuest QuestId="378" QuestName="Root of All Evil" CreatureId="10105" CreatureName="Hogum" X="-4540.97" Y="-11000.6592" Z="606.3139" Map="jeryoung_p" />
+	<PickUpQuest QuestId="378" QuestName="Root of All Evil" CreatureId="10105" CreatureName="Hogum" X="-4540.97" Y="-11000.6592" Z="606.3139" Map="jeryoung_p" /> <!-- Repeatable -->
 	
 	<Interact QuestId="375" QuestName="Burning the Dream" QuestStep="1" CreatureId="10195" CreatureName="Shin Da" X="-4467.09961" Y="-26748.73" Z="258.310547" MapId="jeryoung_p" />
 	
@@ -207,162 +208,149 @@
 	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="6" CreatureId="10445" CreatureName="Ha Jungwang" X="-7537.619" Y="-11289.4023" Z="598.0353" MapId="jeryoung_p" />
 	<PickUpQuest QuestId="421" QuestName="Stepping into the Light" CreatureId="10193" CreatureName="Ha Samik" X="-4385.12451" Y="-10898.7441" Z="602.8487" Map="jeryoung_p" />
 	<PickUpQuest QuestId="389" QuestName="Signed, Sealed, Delivered" CreatureId="10104" CreatureName="Tuyang" X="-5005.645" Y="-10955.0537" Z="624.146851" Map="jeryoung_p" />
-	<PickUpQuest QuestId="388" QuestName="Does That Make Me Crazy" CreatureId="10133" CreatureName="Makgei" X="-6914.623" Y="-11070.9131" Z="592.3207" Map="jeryoung_p" />
+	<PickUpQuest QuestId="388" QuestName="Does That Make Me Crazy?" CreatureId="10133" CreatureName="Makgei" X="-6914.623" Y="-11070.9131" Z="592.3207" Map="jeryoung_p" />
 	<PickUpQuest QuestId="412" QuestName="Not a Spider Fan" CreatureId="10405" CreatureName="Jo Gitan" X="-6423.312" Y="-8181.413" Z="571.647644" Map="jeryoung_p" />
 
+	<Interact QuestId="389" QuestName="Signed, Sealed, Delivered" QuestStep="1" CreatureIds="390,393,401,403,392,404,402,391,400,9480" CreatureName="Gate Stone, Ironmask Reaper" > 
+		<Hotspot X="-3889.9834" Y="-4169.114" Z="647.685547" Range="100" Map="jeryoung_p" />
+		<Hotspot X="116.162895" Y="-5956.30371" Z="379.921417" Range="100" Map="jeryoung_p" />
+	</Interact>
 	
-	 
-	
-	
-	
-
-	<Stop Message="stop" />
-	
-	<!-- Kick Stopped here today -->
-
-<!--
-
-	<Interact QuestId="" QuestName="" QuestStep="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
-	<Interact QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
-		<Hotspot  Range="100" Map="jeryoung_p" />
+	<Interact QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="7" CreatureIds="426,427,429,428," CreatureName="Flamegrass" MapId="jeryoung_p" >
+		<Hotspot X="1545.69946" Y="-10602.166" Z="183.6647" Range="100" Map="jeryoung_p" />
+		<Hotspot X="3127.76074" Y="-10881.5293" Z="462.9116" Range="100" Map="jeryoung_p" />
+		<Hotspot X="597.7538" Y="-13592.5107" Z="-155.255371" Range="100" Map="jeryoung_p" />
+		<Hotspot X="2900.72119" Y="-17258.3672" Z="-23.1993828" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-581.3103" Y="-18239.1953" Z="-102.166382" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-2279.60767" Y="-19219.37" Z="-121.076584" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-5184.529" Y="-18104.93" Z="-98.85926" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-7119.2793" Y="-20605.4941" Z="-193.104691" Range="100" Map="jeryoung_p" />
 	</Interact>
 
-	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" > 
-		<Hotspot  Range="100" Map="jeryoung_p" />
-	</Grind>
-
-	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
-	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
-
-	<If Condition="HasQuest() and not IsQuestComplete()">
+	<Interact QuestId="412" QuestName="Not a Spider Fan" QuestStep="1" CreatureIds="409,411,412,410,406,408,407,405" CreatureName="Spider Eggs" MapId="jeryoung_p" >
+		<Hotspot X="1545.69946" Y="-10602.166" Z="183.6647" Range="100" Map="jeryoung_p" />
+		<Hotspot X="3127.76074" Y="-10881.5293" Z="462.9116" Range="100" Map="jeryoung_p" />
+		<Hotspot X="597.7538" Y="-13592.5107" Z="-155.255371" Range="100" Map="jeryoung_p" />
+		<Hotspot X="2900.72119" Y="-17258.3672" Z="-23.1993828" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-581.3103" Y="-18239.1953" Z="-102.166382" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-2279.60767" Y="-19219.37" Z="-121.076584" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-5184.529" Y="-18104.93" Z="-98.85926" Range="100" Map="jeryoung_p" />
+	</Interact>
 	
+	<Grind QuestId="421" QuestName="Stepping into the Light" QuestStep="1" CreatureIds="9459" CreatureName="Glow Sprite" > 
+		<Hotspot X="1545.69946" Y="-10602.166" Z="183.6647" Range="100" Map="jeryoung_p" />
+		<Hotspot X="3127.76074" Y="-10881.5293" Z="462.9116" Range="100" Map="jeryoung_p" />
+		<Hotspot X="597.7538" Y="-13592.5107" Z="-155.255371" Range="100" Map="jeryoung_p" />
+		<Hotspot X="2900.72119" Y="-17258.3672" Z="-23.1993828" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-581.3103" Y="-18239.1953" Z="-102.166382" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-2279.60767" Y="-19219.37" Z="-121.076584" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-5184.529" Y="-18104.93" Z="-98.85926" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-7119.2793" Y="-20605.4941" Z="-193.104691" Range="100" Map="jeryoung_p" />
+	</Grind>
+	
+	<Grind QuestId="388" QuestName="Does That Make Me Crazy?" QuestStep="1,2" CreatureIds="9481" CreatureName="Galusu" > 
+		<Hotspot X="4376" Y="-11992" Z="424" Range="100" Map="jeryoung_p" />
+	</Grind>
+	
+	<Grind QuestId="388" QuestName="Does That Make Me Crazy?" QuestStep="1,1" CreatureIds="9687,9452,9455,9688,9686" CreatureName="Deranged Martial Artist" > 
+		<Hotspot X="1545.69946" Y="-10602.166" Z="183.6647" Range="100" Map="jeryoung_p" />
+		<Hotspot X="3127.76074" Y="-10881.5293" Z="462.9116" Range="100" Map="jeryoung_p" />
+		<Hotspot X="597.7538" Y="-13592.5107" Z="-155.255371" Range="100" Map="jeryoung_p" />
+		<Hotspot X="2900.72119" Y="-17258.3672" Z="-23.1993828" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-581.3103" Y="-18239.1953" Z="-102.166382" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-2279.60767" Y="-19219.37" Z="-121.076584" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-5184.529" Y="-18104.93" Z="-98.85926" Range="100" Map="jeryoung_p" />
+		<Hotspot X="-7119.2793" Y="-20605.4941" Z="-193.104691" Range="100" Map="jeryoung_p" />
+	</Grind>
+	
+	<TurnInQuest QuestId="412" QuestName="Not a Spider Fan" CreatureId="10405" CreatureName="Jo Gitan" X="-6423.312" Y="-8181.413" Z="571.647644" Map="jeryoung_p" />
+	<TurnInQuest QuestId="421" QuestName="Stepping into the Light" CreatureId="10193" CreatureName="Ha Samik" X="-4385.12451" Y="-10898.7441" Z="602.8487" Map="jeryoung_p" />
+	<TurnInQuest QuestId="389" QuestName="Signed, Sealed, Delivered" CreatureId="10104" CreatureName="Tuyang" X="-5005.645" Y="-10955.0537" Z="624.146851" Map="jeryoung_p" />
+	<TurnInQuest QuestId="388" QuestName="Does That Make Me Crazy?" CreatureId="10133" CreatureName="Makgei" X="-6914.623" Y="-11070.9131" Z="592.3207" Map="jeryoung_p" />
+	<TurnInQuest QuestId="311" QuestName="Chapter 12: Deep in the Gloomdross" QuestStep="8" CreatureId="10194" CreatureName="Paso" X="-7295.76855" Y="-9458.35" Z="603.0324" MapId="jeryoung_p" />
+	<!-- 312 - Chapter 13: A Bridge Too Far Gone -->
+	<!-- Soul Fighter popup - The Way of the Soul Fighter: Part 6 -->
+	<ReadLetter Condition="not HasQuest(350) and not IsQuestComplete(350) and isClass('SoulFighter')" />
+	<PickUpQuest QuestId="418" QuestName="All That Glitters" CreatureId="10189" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" /> <!-- Repeatable -->
+	
+	<Grind QuestId="418" QuestName="All That Glitters" QuestStep="1" CreatureIds="9714" CreatureName="Overseer Furin" > 
+		<Hotspot X="-5568" Y="7984" Z="1104" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<!-- If no class quest and 
+	If we're in ZoneId: 2620, click Dragon Pulse 912 - X="-5345.607" Y="9495.251" Z="1110.40881" -->
+	
+	<!-- 350 - The Way of the Soul Fighter: Part 6 -->
+	<If Condition="HasQuest(350) and isClass('SoulFighter')">
+		<Interact QuestId="350" QuestName="The Way of the Soul Fighter: Part 6" QuestStep="1" CreatureId="22935" CreatureName="Brother Hajoon" X="-160.218323" Y="8986.034" Z="1503.0719" MapId="jeryoung_p" />
+		<Stop Message="Do Step 2" />
+		<!-- Step 2 - Use Tornado (1) after you've been knocked down by Brother Hajoon x3 -->
+		<TurnInQuest QuestId="350" QuestName="The Way of the Soul Fighter: Part 6" QuestStep="3" CreatureId="22935" CreatureName="Brother Hajoon" X="-160.218323" Y="8986.034" Z="1503.0719" MapId="jeryoung_p" />
+		<!-- if in Zone 2751, click 6887 - Dragon Pulse - X="-240.969055" Y="8301.554" Z="1504.93872" - wait for zoning -->
 	</If>
 	
-		<MoveTo QuestId="" QuestStep=""  MapId="jeryoung_p" />
-		
-	<ReadLetter Condition="not HasQuest() and not IsQuestComplete() and isClass('SoulFighter')" />
-		
-		
-
-		<ForcedCombat QuestId="" QuestStep="" CreatureId="" >
-			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
-			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
-			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
-		</ForcedCombat>
-
-		<Stop Message="stop" />
-		<Stop Condition="not IsQuestComplete()" Message="Complete the quest and push start" />
-		
-		
-	<Loot Condition="not IsObjectiveComplete(404, 1)" XYZ="" MapId="jeryoung_p" Range="100" From="1234,4321" />
-		
-
-		
-		
-		<Carry QuestId="" QuestStep=""  MapId="jeryoung_p"  CreatureId="" RequiresInteraction="true" >
-			<Hotspot  MapId="jeryoung_p" Range="40" Aliases="ids" />
-		</Carry>
-		
-		<Button QuestId="" QuestStep="" Shortcut="ToggleGem" />
-		
--->	
+	<!-- 	1307 - The Way of Hongmoon (Soulfighter) -->
+	<If Condition="HasQuest(1307) and not IsQuestComplete(1307) and not IsObjectiveComplete(1307, 7)">
+		<Stop Message="Stop - do quest until I code it" />
+	
+	<!-- Code this - The Way of Hongmoon - Steps 1-7 -
+	1307 - The way of Hongmoon - follow Hajoon - 1
+	<Hotspot X="-4944" Y="8492" Z="1104" Range="100" Map="jeryoung_p" />
 
 	
+	kill:dusk adder - tracker - 9780 9779 9859 - step 2
+	<Hotspot X="-5121.864" Y="8215.006" Z="1110.363" Range="100" Map="jeryoung_p" />
+	then talk with hajoon
+	brother hajoon - 10415
 	
+	 step 3: 
+	 kill more adders - 9860 9778
+	 <Hotspot X="-5856" Y="4296" Z="616" Range="100" Map="jeryoung_p" />
+	brother hajoon - 10484
+	 
+	 
+	step 6 ... follow him again
+	go to here: <Hotspot X="-4953.384" Y="-346.144623" Z="23.8534317" Range="100" Map="jeryoung_p" />
 	
+	step 7: talk to brother hajoon - 10416
+	go to here: <Hotspot X="-4953.384" Y="-346.144623" Z="23.8534317" Range="100" Map="jeryoung_p" />
+	// Cutscene //
 	
+	// Leave the dungeon
 	
+	Step 8: pay your respects (in pondskip vale)
+	-->
+	</If>
 	
+	<Interact QuestId="418" QuestName="All That Glitters" CreatureId="10189" QuestStep="2" CreatureName="Chadai" X="-7339.15137" Y="-9630.3125" Z="595.589844" Map="jeryoung_p" />
+	<TurnInQuest QuestId="418" QuestName="All That Glitters" CreatureId="10103" CreatureName="Choi Gobung" X="-7060.05664" Y="-10447.1377" Z="600.8906" Map="jeryoung_p" />
+	<PickUpQuest QuestId="423" QuestName="Gold Flingers" CreatureId="10103" CreatureName="Choi Gobung" X="-7060.05664" Y="-10447.1377" Z="600.8906" Map="jeryoung_p" />
+	<PickUpQuest QuestId="381" QuestName="Old Man Who?" CreatureId="10133" CreatureName="Makgei" X="-6914.623" Y="-11070.9131" Z="592.3207" Map="jeryoung_p" />
+	<!-- End of Gloomdross Forest -->
 	
+	<!-- Viridian Coast - Pondskip Vale -->
+	<!-- Pondskip Vale -->
+	<PickUpQuest QuestId="424" QuestName="Three Blind Men" CreatureId="10196" CreatureName="Blindman Sim" X="2994.184" Y="4693.93262" Z="865.857544" Map="jeryoung_p" />
+	<Grind QuestId="424" QuestName="Three Blind Men" QuestStep="1" CreatureIds="9458" CreatureName="Valley Ram" >
+		<Hotspot X="3189.50464" Y="4965.418" Z="860.624634" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="5529.62842" Y="8226.377" Z="141.189514" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="8147.61" Y="7733.19971" Z="-169.877884" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="5665.767" Y="11142.5361" Z="141.232452" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="6533.43457" Y="15252.4316" Z="677.1148" Range="1000" Map="jeryoung_p" />
+		<!-- Step 1,1 and 1,2 are the same - kill rams and get the book -->
+	</Grind>
+	
+	<!-- Jadestone Village -->
+	<TurnInQuest QuestId="424" QuestName="Three Blind Men" CreatureId="10621" CreatureName="Nabonsa" X="11535.9375" Y="11854.9727" Z="-439.1214" Map="jeryoung_p" />
+	<PickUpQuest QuestId="386" QuestName="Opportunity of a Lifetime" CreatureId="10621" CreatureName="Nabonsa" X="11535.9375" Y="11854.9727" Z="-439.1214" Map="jeryoung_p" />
+	
+	<!-- End of Profile, Load Pondskip Vale Profile -->
 
 	
+	<!-- Load Profile - Pondskip Vale [Kick].xml -->
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<Stop Message="Load Pondskip Vale [Kick].xml profile" />
 	
 	<Stop Message="End of Line" />
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 </Profile>

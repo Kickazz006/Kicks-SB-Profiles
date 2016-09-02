@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Profile Name="Gloomdross Forest [Kick]" Author="Kickazz006" Version="1.0.0.1">
+<!-- Viridian Coast - Pondskip Vale -->
+
+<!-- in game shortcut keys:
+
+	Register("Interact", Keys.I, InteractCallback);
+	Register("TurnIn", Keys.T, TurnInCallback);
+	Register("PickUp", Keys.P, PickUpCallback);
+	Register("MoveTo", Keys.M, MoveToCallback);
+	Register("GrindHotspot", Keys.H, GrindHotspotCallback);
+	//Register("Jump", Keys.J, JumpCallback);
+	//Register("Wait", Keys.W, WaitCallback);
+   
+-->
+	
+	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
+		<SkipCutscene />
+	</DoWhen>
+	<Reference>
+	</Reference>
+	
+	
+	<!-- Viridian Coast - Pondskip Vale -->
+	
+	<!-- SW Pondskip Vale -->
+	<PickUpQuest QuestId="424" QuestName="Three Blind Men" CreatureId="10196" CreatureName="Blindman Sim" X="2994.184" Y="4693.93262" Z="865.857544" Map="jeryoung_p" />
+	<Grind QuestId="424" QuestName="Three Blind Men" QuestStep="1" CreatureIds="9458" CreatureName="Valley Ram" >
+		<Hotspot X="3189.50464" Y="4965.418" Z="860.624634" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="5529.62842" Y="8226.377" Z="141.189514" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="8147.61" Y="7733.19971" Z="-169.877884" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="5665.767" Y="11142.5361" Z="141.232452" Range="1000" Map="jeryoung_p" />
+		<Hotspot X="6533.43457" Y="15252.4316" Z="677.1148" Range="1000" Map="jeryoung_p" />
+		<!-- Step 1,1 and 1,2 are the same - kill rams and get the book -->
+	</Grind>
+	
+	<!-- Jadestone Village -->
+	<TurnInQuest QuestId="424" QuestName="Three Blind Men" CreatureId="10621" CreatureName="Nabonsa" X="11535.9375" Y="11854.9727" Z="-439.1214" Map="jeryoung_p" />
+	<PickUpQuest QuestId="386" QuestName="Opportunity of a Lifetime" CreatureId="10621" CreatureName="Nabonsa" X="11535.9375" Y="11854.9727" Z="-439.1214" Map="jeryoung_p" />
+	<TurnInQuest QuestId="423" QuestName="Gold Flingers" CreatureId="10198" CreatureName="Oonyon" X="11381.4043" Y="9580.282" Z="-237.04747" Map="jeryoung_p" />
+	
+	<!-- Water Walking -->
+	<If Condition="isClass('SoulFighter')">
+		<!-- Does this work right? there's 3 steps... -->
+		<PickUpQuest QuestId="425" QuestName="Water Walking" CreatureId="10625" CreatureName="Elderly Hermit" X="11954.7227" Y="11932.0283" Z="-436.102844" MapId="jeryoung_p" />
+		<TurnInQuest QuestId="425" QuestName="Water Walking" CreatureId="10625" CreatureName="Elderly Hermit" X="11954.7227" Y="11932.0283" Z="-436.102844" MapId="jeryoung_p" />
+	</If>
+
+	<PickUpQuest QuestId="430" QuestName="Desperate Measures" CreatureId="10108" CreatureName="Ha Jinwa" X="13264.0342" Y="11437.5518" Z="-410.568359"Map="jeryoung_p" /> <!-- Dungeon -->
+	<PickUpQuest QuestId="951" QuestName="Going to Market" CreatureId="10374" CreatureName="Raysu" X="13597.2031" Y="12618.3955" Z="-409.461365" Map="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="1" CreatureId="10183" CreatureName="Pundihay" X="13597.2031" Y="12618.3955" Z="-409.461365" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="381" QuestName="Old Man Who?" CreatureId="10106" CreatureName="Rohay Gwang" X="15571.3633" Y="9007.10449" Z="91.04262" Map="jeryoung_p" />
+	
+	<!-- Going to Market -->
+	<If Condition="HasQuest(951) and not IsQuestComplete(951)">
+		<Interact QuestId="951" QuestName="Going to Market" QuestStep="1" CreatureId="10371" CreatureName="Di Liba" X="15105.4775" Y="8963.202" Z="91.13013" MapId="jeryoung_p" />
+		<Stop Message="Push 'Marketplace' button on the bottom left, then (F5). " />
+		<Stop Message="Push (F5) button" />
+	</If>
+	<TurnInQuest QuestId="951" QuestName="Going to Market" CreatureId="10374" CreatureName="Raysu" X="13597.2031" Y="12618.3955" Z="-409.461365" Map="jeryoung_p" />
+	<TurnInQuest QuestId="386" QuestName="Opportunity of a Lifetime" CreatureId="10322" CreatureName="Hong Yunlang" X="9904.474" Y="17217.3418" Z="-479.75946" Map="jeryoung_p" />
+	<PickUpQuest QuestId="677" QuestName="Opportunity Knocks" CreatureId="10322" CreatureName="Hong Yunlang" X="9904.474" Y="17217.3418" Z="-479.75946" Map="jeryoung_p" /> <!-- Is this based on that old quest from first zone??? -->
+	<If Condition="HasQuest(677) and not IsQuestComplete(677)"> <!-- Opportunity Knocks -->
+		<Stop Message="Equip the Blackram Uniform and attack Ki Lao" /> <!-- step 1 -->
+		<Grind QuestId="677" QuestName="Opportunity Knocks" QuestStep="2" CreatureIds="10584" CreatureName="Ki Lao" >
+			<Hotspot X="9904.474" Y="17217.3418" Z="-479.75946" Range="100" Map="jeryoung_p" />
+		</Grind>
+		<Stop Message="Put your old clothes back on" /> <!-- no step -->
+	</If>
+	<TurnInQuest QuestId="677" QuestName="Opportunity Knocks" CreatureId="10322" CreatureName="Hong Yunlang" X="9904.474" Y="17217.3418" Z="-479.75946" Map="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="2" CreatureId="10077" CreatureName="Old Man Cho" X="13414.3291" Y="24303.5371" Z="-16.6081886" MapId="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="3" CreatureId="561" CreatureName="Pile of Juniper Firewood" X="15333.5908" Y="24370.14" Z="-284.099579" MapId="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="3" CreatureId="566" CreatureName="Piled Firewood" X="13793.0889" Y="24641.39" Z="-18.8875" MapId="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="4" CreatureId="565" CreatureName="Water Jar" X="11257.3135" Y="22563.584" Z="-508.596069" MapId="jeryoung_p" />
+	<Interact QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="4" CreatureId="556" CreatureName="Natural Mud Water Jar" X="12690.8115" Y="23884.8574" Z="-15.0590858" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="312" QuestName="Chapter 13: A Bridge Too Far Gone" QuestStep="5" CreatureId="10077" CreatureName="Old Man Cho" X="13414.3291" Y="24303.5371" Z="-16.6081886" MapId="jeryoung_p" />
+	<!-- 491 - Chapter 14: Drinking Problems -->
+	<!--<PickUpQuest QuestId="442" QuestName="Lost Pet" CreatureId="10199" CreatureName="Mugyul" X="14014.0674" Y="21123.752" Z="-494.989075" Map="jeryoung_p" />  Repeatable Dungeon Quest -->
+	
+	<Interact QuestId="491" QuestName="Chapter 14: Drinking Problems" QuestStep="1" CreatureId="9498" CreatureName="Bomani" X="3396.406" Y="10644.3369" Z="-1130.97388" MapId="jeryoung_p" />
+	<!-- Popup: Gathering and Crafting Guilds -->
+	<ReadLetter Condition="not HasQuest(90) and not IsQuestComplete(90)" /> <!-- Gathering and Crafting Guilds -->
+
+	<!-- Dungeon - Lakeside Cache -->
+	<!-- Desperate Measures - Easy Dungeon Quest -->
+	<Grind QuestId="430" QuestName="Desperate Measures" QuestStep="1" CreatureIds="9567,9566" CreatureName="Inferno Ploggle, Koki Shaman" > <!-- 8 kegs, 8 staffs -->
+		<Hotspot  Range="100" Map="jeryoung_p" />
+		<Hotspot X="7684.329" Y="17856.623" Z="-780.5514" Range="100" Map="jeryoung_p" />
+		<Hotspot X="5774.306" Y="17341.4863" Z="-864.1261" Range="100" Map="jeryoung_p" />
+		<Hotspot X="4633.54053" Y="15379.792" Z="-829.387939" Range="100" Map="jeryoung_p" />
+		<Hotspot X="4540" Y="13232" Z="-844" Range="100" Map="jeryoung_p" />
+		<Hotspot X="4417.534" Y="12246.2373" Z="-919.4932" Range="100" Map="jeryoung_p" />
+		<Hotspot X="1888" Y="14356" Z="-925.536255" Range="100" Map="jeryoung_p" />
+		<Hotspot X="880.4171" Y="15724.82" Z="-931.2158" Range="100" Map="jeryoung_p" />
+		<Hotspot X="919.583557" Y="17078.9883" Z="-927.74585" Range="100" Map="jeryoung_p" />
+	</Grind>
+	
+	<!-- Lost Pet- Pokey - He's hard solo - Auto quest when inside dungeon
+	<Grind QuestId="442" QuestName="Lost Pet" QuestStep="1" CreatureIds="9568" CreatureName="Pokey" >
+		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="100" Map="jeryoung_p" />
+	</Grind>
+	-->
+	
+	<!-- That's What It's All About - Pokey - He's hard solo - Auto quest when inside dungeon
+	<Grind QuestId="25083" QuestName="That's What It's All About" QuestStep="1" CreatureIds="9568" CreatureName="Pokey" >
+		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="100" Map="jeryoung_p" />
+	</Grind>
+	-->
+	<!-- End Dungeon - Lakeside Cache -->
+	
+	<TurnInQuest QuestId="430" QuestName="Desperate Measures" CreatureId="10108" CreatureName="Ha Jinwa" X="13264.0342" Y="11437.5518" Z="-410.568359"Map="jeryoung_p" /> <!-- Dungeon -->
+	<TurnInQuest QuestId="491" QuestName="Chapter 14: Drinking Problems" QuestStep="2" CreatureId="10077" CreatureName="Old Man Cho" X="13414.3291" Y="24303.5371" Z="-16.6081886" MapId="jeryoung_p" />
+	<!-- 492 - Chapter 15: Grin and Bear It -->
+	<PickUpQuest QuestId="382" QuestName="A Bulbari's Tale" CreatureId="10107" CreatureName="Nagan" X="12587.1113" Y="14408.6328" Z="-486.164429" Map="jeryoung_p" />
+	<PickUpQuest QuestId="429" QuestName="A Curious Illness" CreatureId="10202" CreatureName="Yu Jasu" X="15964.0762" Y="14286.6025" Z="-289.847321" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="1" CreatureId="10106" CreatureName="Rohay Gwang" X="15571.3633" Y="9007.10449" Z="91.04262" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="2" CreatureId="10376" CreatureName="Duryo" X="13565.1" Y="9466.352" Z="-172.144562" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="3" CreatureId="10378" CreatureName="Chai So" X="14721.8174" Y="11664.54" Z="-410.069763" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="4" CreatureId="10377" CreatureName="Sutak" X="12150.834" Y="9435.37" Z="-237.094421" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="5" CreatureId="10465" CreatureName="Aung La" X="12525.9814" Y="12940.9238" Z="-468.201141" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="6" CreatureId="10465" CreatureName="Sim Bada" X="16324.4492" Y="14907.3174" Z="-318.798035" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="7" CreatureId="10374" CreatureName="Raysu" X="13597.2031" Y="12618.3955" Z="-409.461365" Map="jeryoung_p" />
+	<Interact QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="8" CreatureId="10375" CreatureName="Hanto" X="13037.5459" Y="12093.7539" Z="-409.783936" Map="jeryoung_p" />
+	<TurnInQuest QuestId="381" QuestName="Gathering and Crafting Goods" QuestStep="9" CreatureId="10106" CreatureName="Rohay Gwang" X="15571.3633" Y="9007.10449" Z="91.04262" Map="jeryoung_p" />
+	<!--<PickUpQuest QuestId="445" QuestName="The Infestation" CreatureId="10203" CreatureName="Bak Gaha" X="18999.5254" Y="10922.2422" Z="-462.9392" Map="jeryoung_p" />  Dungeon, Repeatable -->
+	
+	<!-- 	1307 - The Way of Hongmoon (Soulfighter) -->
+	<If Condition="HasQuest(1307) and isClass('SoulFighter')">
+		<Interact QuestId="1307" QuestName="The Way of Hongmoon" QuestStep="8" CreatureId="562" CreatureName="Sacred Censer" X="19088.291" Y="10918.6025" Z="-462.9392" MapId="jeryoung_p" />
+		<TurnInQuest QuestId="1307" QuestName="The Way of Hongmoon" QuestStep="9" CreatureId="10203" CreatureName="Bak Gaha" X="18999.5254" Y="10922.2422" Z="-462.9392" Map="jeryoung_p" />
+	</If>
+	<!-- Popup: 1342 - A Letter from Hajoon -->
+	<ReadLetter Condition="not HasQuest(1342) and not IsQuestComplete(1342) and isClass('SoulFighter')" />
+	
+	<!-- 	1342 - A Letter from Hajoon (Soulfighter) -->
+	<If Condition="HasQuest(1342) and isClass('SoulFighter')">
+		<Interact QuestId="1342" QuestName="A Letter from Hajoon" QuestStep="1" CreatureId="563" CreatureName="Suspicious Pile of Rocks" X="18263.625" Y="13451.8369" Z="-552.638245" MapId="jeryoung_p" />
+		<Stop Message="Step 2 - Open Inventory and Read Hajoon's Diary" QuestId="1342" QuestName="A Letter from Hajoon" QuestStep="2" />
+		<!-- The above step is a 'Turn In -->	
+	</If>
+	
+	<!-- Dungeon - Plague Hollow 
+	<Grind QuestId="445" QuestName="The Infestation" QuestStep="1" CreatureIds="9562,9564,9563,9599,9565" CreatureName="Plague Mite, Mitey" >
+		<Hotspot X="24942.918" Y="11626.9863" Z="-370.9174" Range="100" Map="jeryoung_p" />
+		<Hotspot X="23596.9121" Y="12107.5039" Z="-707.4602" Range="100" Map="jeryoung_p" />
+		<Hotspot X="27439.09" Y="11981.4385" Z="-262.963226" Range="100" Map="jeryoung_p" />
+		<Hotspot X="27766.2324" Y="10199.5693" Z="-192.6238" Range="100" Map="jeryoung_p" />
+		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="100" Map="jeryoung_p" />		
+	</Grind>
+	<Grind QuestId="25082" QuestName="Mighty Mitey" QuestStep="1" CreatureIds="9565" CreatureName="Plague Mite, Mitey" >
+		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<ReadLetter Condition="HasQuest(25082)" />
+	<ReadLetter Condition="HasQuest(445)" />
+	If in ZoneId: 2606 - Click Dragon Pulse - 817 - X="29066.832" Y="8229.332" Z="-363.5893" -
+	
+	End Dungeon - Plague Hollow -->
+ 
+	<!-- End of Jadestone Village -->
+	
+	<!-- Pondskip Vale -->
+	<Interact QuestId="492" QuestName="Chapter 15: Grin and Bear It" QuestStep="1" CreatureId="10669" CreatureName="Old Man Jum" X="18948.4043" Y="25066.8281" Z="302.863373" MapId="jeryoung_p" />
+	<Interact QuestId="429" QuestName="A Curious Illness" QuestStep="1,2" CreatureIds="459,456,460,473,454,455,457,472,458,471" CreatureName="Herb" MapId="jeryoung_p" >
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+	</Interact>
+	<Interact QuestId="382" QuestName="A Bulbari's Tale" QuestStep="1" CreatureIds="444,445,448,447,449,446,450,451" CreatureName="Juniper Log" > <!-- Kill the guys that pop out of the tree -->
+		<Hotspot X="33778.8164" Y="23848.97" Z="3519.4292" Range="100" Map="jeryoung_p" />
+		<Hotspot X="30640.7031" Y="27296.791" Z="3059.1145" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="492" QuestName="Chapter 15: Grind and Bear It" QuestStep="2" CreatureIds="10663" CreatureName="Wild Bear" >
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+	</Grind>
+	<Grind QuestId="429" QuestName="A Curious Illness" QuestStep="1,1" CreatureIds="9500" CreatureName="Gloomcap" >
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+	</Grind>
+	
+	<TurnInQuest QuestId="492" QuestName="Chapter 15: Grin and Bear It" CreatureId="10620" CreatureName="Old Man Cho" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" />
+	<!-- 313 - Chapter 16: The Eight Masters --> <!-- Equip Earring -->
+	<TurnInQuest QuestId="382" QuestName="A Bulbari's Tale" CreatureId="10623" CreatureName="Ahwak" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" />
+	<PickUpQuest QuestId="945" QuestName="Peace and Quiet" CreatureId="10623" CreatureName="Ahwak" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
+	<TurnInQuest QuestId="429" QuestName="A Curious Illness" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" />
+	<PickUpQuest QuestId="969" QuestName="Knowledge is Power" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
+	<Interact QuestId="945" QuestName="Peace and Quiet" QuestStep="1,2" CreatureIds="509,512,514,513,508,807,511,510" CreatureName="Dreamgrass" MapId="jeryoung_p" >
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+	</Interact>
+	<Grind QuestId="945" QuestName="Peace and Quiet" QuestStep="1,1" CreatureIds="9503,9504" CreatureName="Ploggosaur, Hex Ploggle" >
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="969" QuestName="Knowledge is Power" QuestStep="1" CreatureIds="10618" CreatureName="Giganura" >
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+	</Grind>
+	<TurnInQuest QuestId="969" QuestName="Knowledge is Power" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
+	<TurnInQuest QuestId="945" QuestName="Peace and Quiet" CreatureId="10623" CreatureName="Ahwak" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
+	
+	<!-- Chapter 16: The Eight Masters -->
+	<If Condition="HasQuest(313) and not IsQuestComplete(313)">
+		<!-- Cave of Mystery -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="1" CreatureId="10272" CreatureName="Hansu" X="43437.3555" Y="20804.6211" Z="846.8706" MapId="jeryoung_p" />
+		<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="2" CreatureId="10272" CreatureName="Hansu" X="43437.3555" Y="20804.6211" Z="846.8706" MapId="jeryoung_p" />
+		<!-- Step 3 - escort Hansu - 10272 to X="48501.0625" Y="22450.0645" Z="544.1845" -->
+		<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="4" CreatureId="10272" CreatureName="Hansu" X="48501.0625" Y="22450.0645" Z="544.1845" MapId="jeryoung_p" />
+		<!-- Jump down -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="5" CreatureName="End of Cave" X="53954.5625" Y="19548.7715" Z="1260.33948" MapId="jeryoung_p" /> <!-- this hotspot is estimated, as it went to cutscene -->
+		<!-- Cutscene / zone - wait timer 30s? -->
+		<!-- End Cave of Mystery -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="6" CreatureId="10387" CreatureName="Old Man Cho" X="22976.8789" Y="32449.4141" Z="1915.84363" Map="jeryoung_p" />
+		<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="7" CreatureId="10387" CreatureName="Old Man Cho" X="22976.8789" Y="32449.4141" Z="1915.84363" Map="jeryoung_p" />
+		<!--<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="8" CreatureId="" CreatureName="Dragonscale Dragon Pulse" X="22650.0977" Y="34243.1328" Z="1858.96484" Map="jeryoung_p" /> - no id?? -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="8" CreatureName="Dragon Pulse" X="22650.0977" Y="34243.1328" Z="1858.96484" Map="jeryoung_p" />
+		<Stop Message="Push F" QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="8" />
+		<!-- Waittimer 6s -->
+		<!--<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="9" CreatureId="535" CreatureName="Dragon Pulse" X="19889.3359" Y="44672.89" Z="1722.54285" Map="jeryoung_p" /> - no id?? -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="9" CreatureId="535" CreatureName="Dragon Pulse" X="19889.3359" Y="44672.89" Z="1722.54285" Map="jeryoung_p" />
+		<Stop Message="Push F" QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="9" />
+		<!-- Waittimer 30s -->
+		<!--<Interact QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="10" CreatureId="535" CreatureName="Dragon Pulse" X="22266.4043" Y="53034.09" Z="1479.35474" Map="jeryoung_p" /> - no id?? -->
+		<MoveTo QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="10" CreatureId="535" CreatureName="Dragon Pulse" X="22266.4043" Y="53034.09" Z="1479.35474" Map="jeryoung_p" />
+		<Stop Message="Push F" QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="10" />
+		<!-- Waittimer 30s -->
+	</If>
+	<TurnInQuest QuestId="313" QuestName="Chapter 16: The Eight Masters" QuestStep="11" CreatureId="10391" CreatureName="Bunah" X="28759.9727" Y="40730.7148" Z="574.8535" MapId="jeryoung_p" />
+	<!-- 494 - Chapter 17: The Test of the Eight -->
+
+	<!-- Chapter 17: The Test of the Eight -->
+	<If Condition="HasQuest(494) and not IsQuestComplete(494)">
+		<MoveTo QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="1" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="2" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="3" CreatureId="10128" CreatureName="Taywong" X="34377.77" Y="44639.24" Z="519.19574" MapId="jeryoung_p" />
+		<MoveTo QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="4" CreatureId="10302" CreatureName="Hansu" X="34377.77" Y="44639.24" Z="519.19574" MapId="jeryoung_p" />
+		<!-- Wait 5s to be attacked -->
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="4" CreatureId="10302" CreatureName="Hansu" X="34377.77" Y="44639.24" Z="519.19574" MapId="jeryoung_p" />
+		<Grind QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="5" CreatureIds="9493" CreatureName="Cursed Training Dummy" >
+			<Hotspot X="39586.93" Y="42385.625" Z="653.066345" Range="100" Map="jeryoung_p" />
+		</Grind>
+		<MoveTo QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="6" CreatureId="10303" CreatureName="Sansu" X="39781.4648" Y="44565.97" Z="743.9964" MapId="jeryoung_p" />
+		<!-- Wait 5s to be attacked -->
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="6" CreatureId="10303" CreatureName="Sansu" X="39781.4648" Y="44565.97" Z="743.9964" MapId="jeryoung_p" />
+		<Grind QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="7" CreatureIds="9494" CreatureName="Wandering Training Dummy" >
+			<Hotspot X="35895.918" Y="46704.82" Z="938.401062" Range="100" Map="jeryoung_p" />
+		</Grind>
+		<!-- Loot Treasure Chest: 922 @ X="35925.99" Y="46956.4844" Z="942.852966" -->
+		<!-- Add jump link to fall from / to:
+		<Hotspot X="35680.8555" Y="45110.457" Z="1012.1991" Range="0.8" Timeout="60" Name="New Hotspot" />
+		<Hotspot X="35196.8438" Y="44789.55" Z="494.1365" Range="0.8" Timeout="60" Name="New Hotspot" />
+		-->
+		<!-- Steps 8 and 9 deleted ? -->
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="10" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
+		<!-- Step 11 deleted -->
+		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="12" CreatureId="10128" CreatureName="Taywong" X="34377.77" Y="44639.24" Z="519.19574" MapId="jeryoung_p" />
+	</If>
+	<TurnInQuest QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="13" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
+	<!-- Equip Ring -->
+	<!-- 314 - Chapter 18: Shroom to Grow -->
+	<ReadLetter Condition="not HasQuest(939) and not IsQuestComplete(939)" /> <!-- A New Start -->
+	
+	<!-- Chapter 18: Shroom to Grow -->
+	<If Condition="HasQuest(314) and not IsQuestComplete(314)">
+		<Stop Message="Press K, use Training Points, Press Learn" QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="1" />
+		<Interact QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="2" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
+	</If>
+	<!-- This came up about 2 seconds away from Old Man Cho ... idk if it's auto, or if it required moving away a little bit ?? -->
+	<ReadLetter Condition="not HasQuest(439) and not IsQuestComplete(439) and isClass('SoulFighter')" /> <!-- A Dashing Experience -->
+	<!-- Go outside and Jump off the ledge??? idk, dragon things are weird --> 
+	
+	<!-- Wanderer's Hut -->
+	<TurnInQuest QuestId="439" QuestName="A Dashing Experience" CreatureId="10222" CreatureName="Elderly Hermit" X="25326.291" Y="46027.63" Z="-1453.01758" Map="jeryoung_p" />
+	<PickUpQuest QuestId="970" QuestName="Calling The Old Man Out" CreatureId="10222" CreatureName="Elderly Hermit" X="25326.291" Y="46027.63" Z="-1453.01758" Map="jeryoung_p" />
+	<Interact QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="3" CreatureId="10218" CreatureName="Oh Gukchun" X="25338.0566" Y="45574.35" Z="-1435.92627" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="383" QuestName="Lost Guards" CreatureId="10215" CreatureName="Dan Ryongun" X="25093.5488" Y="45635.7773" Z="-1455.66907" Map="jeryoung_p" />
+	<PickUpQuest QuestId="944" QuestName="Painful Lessons" CreatureId="10204" CreatureName="Hongbo" X="25421.7129" Y="45836.0664" Z="-1439.50647" Map="jeryoung_p" />
+	<PickUpQuest QuestId="438" QuestName="Do it for Science" CreatureId="10220" CreatureName="Wanju" X="25625.6953" Y="45908.1" Z="-1432.29065" Map="jeryoung_p" />
+	
+	
+	
+
+	
+	
+	<Stop Message="stop" />
+	
+	<!-- Kick Stopped here today -->
+	
+	<!-- Croaker Lagoon is next -->
+
+	<!--
+
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
+		<Hotspot  Range="100" Map="jeryoung_p" />
+	</Interact>
+
+	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" >
+		<Hotspot  Range="100" Map="jeryoung_p" />
+	</Grind>
+
+	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+
+	<If Condition="HasQuest() and not IsQuestComplete()">
+	
+	</If>
+	
+		<MoveTo QuestId="" QuestStep=""  MapId="jeryoung_p" />
+		
+	<ReadLetter Condition="not HasQuest() and not IsQuestComplete() and isClass('SoulFighter')" />
+
+		<ForcedCombat QuestId="" QuestStep="" CreatureId="" >
+			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
+			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
+			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
+		</ForcedCombat>
+
+		<Stop Message="stop" />
+		<Stop Condition="not IsQuestComplete()" Message="Complete the quest and push start" />
+		
+		
+	<Loot Condition="not IsObjectiveComplete(404, 1)" XYZ="" MapId="jeryoung_p" Range="100" From="1234,4321" />
+		
+		
+		<Carry QuestId="" QuestStep=""  MapId="jeryoung_p"  CreatureId="" RequiresInteraction="true" >
+			<Hotspot  MapId="jeryoung_p" Range="40" Aliases="ids" />
+		</Carry>
+		
+		<Button QuestId="" QuestStep="" Shortcut="ToggleGem" />
+		
+	-->	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Stop Message="End of Line" />
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</Profile>
