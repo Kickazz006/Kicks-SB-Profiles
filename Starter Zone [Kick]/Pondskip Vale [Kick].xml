@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Profile Name="Gloomdross Forest [Kick]" Author="Kickazz006" Version="1.0.0.1">
+<Profile Name="Pondskip Vale [Kick]" Author="Kickazz006" Version="1.0.0.1">
 <!-- Viridian Coast - Pondskip Vale -->
 
 <!-- in game shortcut keys:
@@ -63,7 +63,7 @@
 	<If Condition="HasQuest(677) and not IsQuestComplete(677)"> <!-- Opportunity Knocks -->
 		<Stop Message="Equip the Blackram Uniform and attack Ki Lao" /> <!-- step 1 -->
 		<Grind QuestId="677" QuestName="Opportunity Knocks" QuestStep="2" CreatureIds="10584" CreatureName="Ki Lao" >
-			<Hotspot X="9904.474" Y="17217.3418" Z="-479.75946" Range="100" Map="jeryoung_p" />
+			<Hotspot X="9904.474" Y="17217.3418" Z="-479.75946" Range="10000" Map="jeryoung_p" />
 		</Grind>
 		<Stop Message="Put your old clothes back on" /> <!-- no step -->
 	</If>
@@ -84,26 +84,26 @@
 	<!-- Dungeon - Lakeside Cache -->
 	<!-- Desperate Measures - Easy Dungeon Quest -->
 	<Grind QuestId="430" QuestName="Desperate Measures" QuestStep="1" CreatureIds="9567,9566" CreatureName="Inferno Ploggle, Koki Shaman" > <!-- 8 kegs, 8 staffs -->
-		<Hotspot  Range="100" Map="jeryoung_p" />
-		<Hotspot X="7684.329" Y="17856.623" Z="-780.5514" Range="100" Map="jeryoung_p" />
-		<Hotspot X="5774.306" Y="17341.4863" Z="-864.1261" Range="100" Map="jeryoung_p" />
-		<Hotspot X="4633.54053" Y="15379.792" Z="-829.387939" Range="100" Map="jeryoung_p" />
-		<Hotspot X="4540" Y="13232" Z="-844" Range="100" Map="jeryoung_p" />
-		<Hotspot X="4417.534" Y="12246.2373" Z="-919.4932" Range="100" Map="jeryoung_p" />
-		<Hotspot X="1888" Y="14356" Z="-925.536255" Range="100" Map="jeryoung_p" />
-		<Hotspot X="880.4171" Y="15724.82" Z="-931.2158" Range="100" Map="jeryoung_p" />
-		<Hotspot X="919.583557" Y="17078.9883" Z="-927.74585" Range="100" Map="jeryoung_p" />
+		<Hotspot  Range="10000" Map="jeryoung_p" />
+		<Hotspot X="7684.329" Y="17856.623" Z="-780.5514" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="5774.306" Y="17341.4863" Z="-864.1261" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="4633.54053" Y="15379.792" Z="-829.387939" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="4540" Y="13232" Z="-844" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="4417.534" Y="12246.2373" Z="-919.4932" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="1888" Y="14356" Z="-925.536255" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="880.4171" Y="15724.82" Z="-931.2158" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="919.583557" Y="17078.9883" Z="-927.74585" Range="10000" Map="jeryoung_p" />
 	</Grind>
 	
 	<!-- Lost Pet- Pokey - He's hard solo - Auto quest when inside dungeon
 	<Grind QuestId="442" QuestName="Lost Pet" QuestStep="1" CreatureIds="9568" CreatureName="Pokey" >
-		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="100" Map="jeryoung_p" />
+		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="10000" Map="jeryoung_p" />
 	</Grind>
 	-->
 	
 	<!-- That's What It's All About - Pokey - He's hard solo - Auto quest when inside dungeon
 	<Grind QuestId="25083" QuestName="That's What It's All About" QuestStep="1" CreatureIds="9568" CreatureName="Pokey" >
-		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="100" Map="jeryoung_p" />
+		<Hotspot X="632.9641" Y="17397.19" Z="-971.918335"Range="10000" Map="jeryoung_p" />
 	</Grind>
 	-->
 	<!-- End Dungeon - Lakeside Cache -->
@@ -141,14 +141,14 @@
 	
 	<!-- Dungeon - Plague Hollow 
 	<Grind QuestId="445" QuestName="The Infestation" QuestStep="1" CreatureIds="9562,9564,9563,9599,9565" CreatureName="Plague Mite, Mitey" >
-		<Hotspot X="24942.918" Y="11626.9863" Z="-370.9174" Range="100" Map="jeryoung_p" />
-		<Hotspot X="23596.9121" Y="12107.5039" Z="-707.4602" Range="100" Map="jeryoung_p" />
-		<Hotspot X="27439.09" Y="11981.4385" Z="-262.963226" Range="100" Map="jeryoung_p" />
-		<Hotspot X="27766.2324" Y="10199.5693" Z="-192.6238" Range="100" Map="jeryoung_p" />
-		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="100" Map="jeryoung_p" />		
+		<Hotspot X="24942.918" Y="11626.9863" Z="-370.9174" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="23596.9121" Y="12107.5039" Z="-707.4602" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27439.09" Y="11981.4385" Z="-262.963226" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27766.2324" Y="10199.5693" Z="-192.6238" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="10000" Map="jeryoung_p" />		
 	</Grind>
 	<Grind QuestId="25082" QuestName="Mighty Mitey" QuestStep="1" CreatureIds="9565" CreatureName="Plague Mite, Mitey" >
-		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="100" Map="jeryoung_p" />
+		<Hotspot X="28654.2246" Y="8472.629" Z="-349.2626" Range="10000" Map="jeryoung_p" />
 	</Grind>
 	<ReadLetter Condition="HasQuest(25082)" />
 	<ReadLetter Condition="HasQuest(445)" />
@@ -161,38 +161,38 @@
 	<!-- Pondskip Vale -->
 	<Interact QuestId="492" QuestName="Chapter 15: Grin and Bear It" QuestStep="1" CreatureId="10669" CreatureName="Old Man Jum" X="18948.4043" Y="25066.8281" Z="302.863373" MapId="jeryoung_p" />
 	<Interact QuestId="429" QuestName="A Curious Illness" QuestStep="1,2" CreatureIds="459,456,460,473,454,455,457,472,458,471" CreatureName="Herb" MapId="jeryoung_p" >
-		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
-		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
-		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
-		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
-		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
-		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="10000" Map="jeryoung_p" />		
 	</Interact>
 	<Interact QuestId="382" QuestName="A Bulbari's Tale" QuestStep="1" CreatureIds="444,445,448,447,449,446,450,451" CreatureName="Juniper Log" > <!-- Kill the guys that pop out of the tree -->
-		<Hotspot X="33778.8164" Y="23848.97" Z="3519.4292" Range="100" Map="jeryoung_p" />
-		<Hotspot X="30640.7031" Y="27296.791" Z="3059.1145" Range="100" Map="jeryoung_p" />
+		<Hotspot X="33778.8164" Y="23848.97" Z="3519.4292" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="30640.7031" Y="27296.791" Z="3059.1145" Range="10000" Map="jeryoung_p" />
 	</Grind>
 	<Grind QuestId="492" QuestName="Chapter 15: Grind and Bear It" QuestStep="2" CreatureIds="10663" CreatureName="Wild Bear" >
-		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
-		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
-		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
-		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
-		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
-		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="10000" Map="jeryoung_p" />		
 	</Grind>
 	<Grind QuestId="429" QuestName="A Curious Illness" QuestStep="1,1" CreatureIds="9500" CreatureName="Gloomcap" >
-		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="100" Map="jeryoung_p" />
-		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="100" Map="jeryoung_p" />
-		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="100" Map="jeryoung_p" />
-		<Hotspot X="29612" Y="27660" Z="2992" Range="100" Map="jeryoung_p" />
-		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="100" Map="jeryoung_p" />
-		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="100" Map="jeryoung_p" />		
+		<Hotspot X="25773.1816" Y="22947.09" Z="1925.95117" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26377.1426" Y="23061.5625" Z="1947.08191" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27967.377" Y="24749.48" Z="2237.89233" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="29612" Y="27660" Z="2992" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="30543.3164" Y="25906.5273" Z="3008.70581" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="31557.0977" Y="24797.3438" Z="3352.98169" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33008.2539" Y="23705.8047" Z="3602.63354" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36469.9453" Y="25797.6953" Z="3135.08545" Range="10000" Map="jeryoung_p" />		
 	</Grind>
 	
 	<TurnInQuest QuestId="492" QuestName="Chapter 15: Grin and Bear It" CreatureId="10620" CreatureName="Old Man Cho" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" />
@@ -202,28 +202,28 @@
 	<TurnInQuest QuestId="429" QuestName="A Curious Illness" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" />
 	<PickUpQuest QuestId="969" QuestName="Knowledge is Power" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
 	<Interact QuestId="945" QuestName="Peace and Quiet" QuestStep="1,2" CreatureIds="509,512,514,513,508,807,511,510" CreatureName="Dreamgrass" MapId="jeryoung_p" >
-		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="10000" Map="jeryoung_p" />
 	</Interact>
 	<Grind QuestId="945" QuestName="Peace and Quiet" QuestStep="1,1" CreatureIds="9503,9504" CreatureName="Ploggosaur, Hex Ploggle" >
-		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="10000" Map="jeryoung_p" />
 	</Grind>
 	<Grind QuestId="969" QuestName="Knowledge is Power" QuestStep="1" CreatureIds="10618" CreatureName="Giganura" >
-		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="100" Map="jeryoung_p" />
-		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="100" Map="jeryoung_p" />
-		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="100" Map="jeryoung_p" />
+		<Hotspot X="35367.56" Y="20507.8711" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="36490.3125" Y="23163.7734" Z="963.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="37232.9375" Y="19858.5645" Z="956.65" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="34848.2422" Y="19780.7051" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33115.0469" Y="19491.2734" Z="956.649963" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="33808.4922" Y="20824" Z="956.649963" Range="10000" Map="jeryoung_p" />
 	</Grind>
 	<TurnInQuest QuestId="969" QuestName="Knowledge is Power" CreatureId="10264" CreatureName="Wasugi" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
 	<TurnInQuest QuestId="945" QuestName="Peace and Quiet" CreatureId="10623" CreatureName="Ahwak" X="35554.375" Y="18224.7734" Z="1143.9126" Map="jeryoung_p" /> <!-- Repeatable -->
@@ -266,18 +266,18 @@
 		<!-- Wait 5s to be attacked -->
 		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="4" CreatureId="10302" CreatureName="Hansu" X="34377.77" Y="44639.24" Z="519.19574" MapId="jeryoung_p" />
 		<Grind QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="5" CreatureIds="9493" CreatureName="Cursed Training Dummy" >
-			<Hotspot X="39586.93" Y="42385.625" Z="653.066345" Range="100" Map="jeryoung_p" />
+			<Hotspot X="39586.93" Y="42385.625" Z="653.066345" Range="10000" Map="jeryoung_p" />
 		</Grind>
 		<MoveTo QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="6" CreatureId="10303" CreatureName="Sansu" X="39781.4648" Y="44565.97" Z="743.9964" MapId="jeryoung_p" />
 		<!-- Wait 5s to be attacked -->
 		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="6" CreatureId="10303" CreatureName="Sansu" X="39781.4648" Y="44565.97" Z="743.9964" MapId="jeryoung_p" />
 		<Grind QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="7" CreatureIds="9494" CreatureName="Wandering Training Dummy" >
-			<Hotspot X="35895.918" Y="46704.82" Z="938.401062" Range="100" Map="jeryoung_p" />
+			<Hotspot X="35895.918" Y="46704.82" Z="938.401062" Range="10000" Map="jeryoung_p" />
 		</Grind>
 		<!-- Loot Treasure Chest: 922 @ X="35925.99" Y="46956.4844" Z="942.852966" -->
 		<!-- Add jump link to fall from / to:
-		<Hotspot X="35680.8555" Y="45110.457" Z="1012.1991" Range="0.8" Timeout="60" Name="New Hotspot" />
-		<Hotspot X="35196.8438" Y="44789.55" Z="494.1365" Range="0.8" Timeout="60" Name="New Hotspot" />
+		<Hotspot X="35680.8555" Y="45110.457" Z="1012.1991" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="35196.8438" Y="44789.55" Z="494.1365" Range="10000" Map="jeryoung_p" />
 		-->
 		<!-- Steps 8 and 9 deleted ? -->
 		<Interact QuestId="494" QuestName="Chapter 17: The Test of the Eight" QuestStep="10" CreatureId="10186" CreatureName="Old Man Cho" X="33858.71" Y="44446.418" Z="500.307922" MapId="jeryoung_p" />
@@ -300,162 +300,101 @@
 	
 	<!-- Wanderer's Hut -->
 	<TurnInQuest QuestId="439" QuestName="A Dashing Experience" CreatureId="10222" CreatureName="Elderly Hermit" X="25326.291" Y="46027.63" Z="-1453.01758" Map="jeryoung_p" />
-	<PickUpQuest QuestId="970" QuestName="Calling The Old Man Out" CreatureId="10222" CreatureName="Elderly Hermit" X="25326.291" Y="46027.63" Z="-1453.01758" Map="jeryoung_p" />
+	<PickUpQuest QuestId="970" QuestName="Calling The Old Man Out" CreatureId="10222" CreatureName="Elderly Hermit" X="25326.291" Y="46027.63" Z="-1453.01758" Map="jeryoung_p" /> <!-- Soul Fighter Only? -->
 	<Interact QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="3" CreatureId="10218" CreatureName="Oh Gukchun" X="25338.0566" Y="45574.35" Z="-1435.92627" MapId="jeryoung_p" />
 	<PickUpQuest QuestId="383" QuestName="Lost Guards" CreatureId="10215" CreatureName="Dan Ryongun" X="25093.5488" Y="45635.7773" Z="-1455.66907" Map="jeryoung_p" />
 	<PickUpQuest QuestId="944" QuestName="Painful Lessons" CreatureId="10204" CreatureName="Hongbo" X="25421.7129" Y="45836.0664" Z="-1439.50647" Map="jeryoung_p" />
 	<PickUpQuest QuestId="438" QuestName="Do it for Science" CreatureId="10220" CreatureName="Wanju" X="25625.6953" Y="45908.1" Z="-1432.29065" Map="jeryoung_p" />
-	
-	
-	
-
-	
-	
-	<Stop Message="stop" />
-	
-	<!-- Kick Stopped here today -->
-	
-	<!-- Croaker Lagoon is next -->
-
-	<!--
-
-	<Interact QuestId="" QuestName="" QuestStep="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
-	<Interact QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
-		<Hotspot  Range="100" Map="jeryoung_p" />
+	<Interact QuestId="383" QuestName="Lost Guards" QuestStep="1" CreatureId="488" CreatureName="Guard Corpse" X="22779.2227" Y="43962.1055" Z="-1436.89368" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="383" QuestName="Lost Guards" CreatureId="10215" CreatureName="Dan Ryongun" X="25093.5488" Y="45635.7773" Z="-1455.66907" Map="jeryoung_p" />
+	<!--<PickUpQuest QuestId="384" QuestName="Changing Of The Lost Guards" CreatureId="10215" CreatureName="Dan Ryongun" X="25093.5488" Y="45635.7773" Z="-1455.66907" Map="jeryoung_p" />  Repeatable -->
+	<!--<PickUpQuest QuestId="387" QuestName="This Mite Hurt" CreatureId="10392" CreatureName="Choi Duyung" X="25495.8438" Y="45760.7773" Z="-1436.23608" Map="jeryoung_p" />  Repeatable -->
+	<TurnInQuest QuestId="970" QuestName="Calling The Old Man Out" QuestStep="1" CreatureId="10499" CreatureName="Old Man Cho" X="28376.8047" Y="47839.0156" Z="-741.9199" Map="jeryoung_p" />
+	<Interact QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="4" CreatureIds="10639,486,468,470,485,462,469,467,463,461,481,484,487,493,466,492,490,491,464,489,465" CreatureName="Poisonous Mushroom" MapId="jeryoung_p" >
+		<Hotspot X="25040.7617" Y="43792.6445" Z="-1755.5603" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="23453.3945" Y="42698.9766" Z="-1746.71326" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="22763.793" Y="42008.07" Z="-1648.57068" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="20268.4883" Y="40642.2461" Z="-1124.833" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="21460.375" Y="39941.0469" Z="-1293.13269" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="22846.541" Y="38389.59" Z="-1460.62073" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="23310.9023" Y="36475.0352" Z="-1268.24487" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="24768.873" Y="37168.3633" Z="-1511.46838" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="27828.73" Y="37674.6523" Z="-1298.92371" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="25292.3613" Y="38198.0938" Z="-1423.58069" Range="10000" Map="jeryoung_p" />
 	</Interact>
-
-	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" >
-		<Hotspot  Range="100" Map="jeryoung_p" />
+	<Interact QuestId="438" QuestName="Do it for Science" QuestStep="1,2" CreatureIds="532,525,526,524,530,527,531,528523,533,529,522,521" CreatureName="Rock in Stream Bed" MapId="jeryoung_p" > <!-- Must search under rock and then interact with the unconscious poggle -->
+		<Hotspot X="28586.54" Y="37533.8633" Z="-1332.98853" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26036.2656" Y="38150.75" Z="-1407.25354" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="24366.94" Y="39727.082" Z="-1753.01831" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="24850" Y="41939.48" Z="-1747.58594" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26630.3125" Y="40778.21" Z="-1572.51575" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26516.21" Y="39157.5469" Z="-1459.3938" Range="10000" Map="jeryoung_p" />		
+	</Interact>
+	<Grind QuestId="438" QuestName="Do it for Science" QuestStep="1,1" CreatureIds="10594" CreatureName="Thrasher" MapId="jeryoung_p" >
+		<Hotspot X="28586.54" Y="37533.8633" Z="-1332.98853" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26036.2656" Y="38150.75" Z="-1407.25354" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="24366.94" Y="39727.082" Z="-1753.01831" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="24850" Y="41939.48" Z="-1747.58594" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26630.3125" Y="40778.21" Z="-1572.51575" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="26516.21" Y="39157.5469" Z="-1459.3938" Range="10000" Map="jeryoung_p" />		
 	</Grind>
-
-	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
-	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
-
-	<If Condition="HasQuest() and not IsQuestComplete()">
+	<TurnInQuest QuestId="438" QuestName="Do it for Science" CreatureId="10220" CreatureName="Wanju" X="25625.6953" Y="45908.1" Z="-1432.29065" Map="jeryoung_p" />
+	<TurnInQuest QuestId="314" QuestName="Chapter 18: Shroom to Grow" QuestStep="5" CreatureId="10218" CreatureName="Oh Gukchun" X="25338.0566" Y="45574.35" Z="-1435.92627" MapId="jeryoung_p" /> <!-- Ring + Jewel -->
+	<!-- 496 - Chapter 19: Unearthed Plot -->
+	<Grind QuestId="944" QuestName="Painful Lessons" QuestStep="1,1" CreatureIds="10596,10597,10598" CreatureName="Furious Blade Master" Range="1000" X="23841.7676" Y="46447.29" Z="-1254.519" Map="jeryoung_p" />
+	<Grind QuestId="944" QuestName="Painful Lessons" QuestStep="1,2" CreatureIds="10600,10604,10605" CreatureName="Furious Kung Fu Master" Range="1000" X="21928" Y="47192" Z="-860" Map="jeryoung_p" />
+	<Grind QuestId="944" QuestName="Painful Lessons" QuestStep="1,3" CreatureIds="10610,10608,10609" CreatureName="Furious Destroyer" Range="10000" X="23841.7676" Y="46447.29" Z="-1254.519" Map="jeryoung_p" />
+	<TurnInQuest QuestId="944" QuestName="Painful Lessons" CreatureId="10204" CreatureName="Hongbo" X="25421.7129" Y="45836.0664" Z="-1439.50647" Map="jeryoung_p" />
+	<!-- End of Wanderer's Hut -->
 	
+	<!-- Jadestone Village -->
+	<If Condition="HasQuest(496) and not IsQuestComplete(496)"> <!-- Chapter 19: Unearthed Plot -->
+		<!-- Windstride to Jadestone Village -->
+		<MoveTo QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="1" X="15878.6484" Y="9691.10449" Z="87.15001" MapId="jeryoung_p" /> <!-- Jadestone Village -->
+		<Interact QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="2" CreatureId="10304" CreatureName="Pundihay" X="15687.4941" Y="8896.82" Z="91.15" MapId="jeryoung_p" />
+		<Grind QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="3" CreatureIds="9815,9575,9577" CreatureName="Jiangshi, Revenants" >
+			<Hotspot X="15881.8281" Y="10055.4512" Z="84.85438" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="12538.0879" Y="9809.766" Z="-227.677429" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="11464.1885" Y="10939.0391" Z="-430.852417" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="10155.7373" Y="11378.4023" Z="-426.733" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="10871.127" Y="12193.6162" Z="-516.5376" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="13265.8926" Y="12123.8506" Z="-409.85" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="15063.375" Y="12518.2764" Z="-383.901123" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="17036.7461" Y="13080.0166" Z="-343.775818" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="17865.291" Y="15006.667" Z="-504.3702" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="15795.4521" Y="16744.8457" Z="-522.0102" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="17538.4785" Y="20735.627" Z="-234.559219" Range="10000" Map="jeryoung_p" />
+			<Hotspot X="18317.3574" Y="23285.89" Z="131.676041" Range="10000" Map="jeryoung_p" />	
+		</Grind>
+		<Interact QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="4" CreatureId="10304" CreatureName="Pundihay" X="15687.4941" Y="8896.82" Z="91.15" MapId="jeryoung_p" />
+		<!-- Plague Hollow -->
+		<MoveTo QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="5" X="23389.8828" Y="12947.5938" Z="-562.301941" MapId="jeryoung_p" />
+		<Grind QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="6" CreatureIds="9598" CreatureName="Nekuro" Range="1000" Map="jeryoung_p" X="28462.4648" Y="8602.765" Z="-343.9923" />
+		<!-- Windstride back to town -->
 	</If>
+	<TurnInQuest QuestId="496" QuestName="Chapter 19: Unearthed Plot" QuestStep="7" CreatureId="10183" CreatureName="Pundihay" X="14624.0029" Y="13452.4883" Z="-398.536926" MapId="jeryoung_p" />
+	<!-- 315 - Chapter 20: Abandoned Post - Go To Songshu Isle -->
+	<PickUpQuest QuestId="443" QuestName="A Thoughtful Gift" CreatureId="10106" CreatureName="Rohay Gwang" X="15579.916" Y="9005.882" Z="91.15" Map="jeryoung_p" />
+	<PickUpQuest QuestId="444" QuestName="Striking Out" CreatureId="10107" CreatureName="Nagan" X="12563.4883" Y="14396.1533" Z="-486.339325" Map="jeryoung_p" />
+	<!-- End Jadestone Village -->
 	
-		<MoveTo QuestId="" QuestStep=""  MapId="jeryoung_p" />
-		
-	<ReadLetter Condition="not HasQuest() and not IsQuestComplete() and isClass('SoulFighter')" />
-
-		<ForcedCombat QuestId="" QuestStep="" CreatureId="" >
-			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
-			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
-			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
-		</ForcedCombat>
-
-		<Stop Message="stop" />
-		<Stop Condition="not IsQuestComplete()" Message="Complete the quest and push start" />
-		
-		
-	<Loot Condition="not IsObjectiveComplete(404, 1)" XYZ="" MapId="jeryoung_p" Range="100" From="1234,4321" />
-		
-		
-		<Carry QuestId="" QuestStep=""  MapId="jeryoung_p"  CreatureId="" RequiresInteraction="true" >
-			<Hotspot  MapId="jeryoung_p" Range="40" Aliases="ids" />
-		</Carry>
-		
-		<Button QuestId="" QuestStep="" Shortcut="ToggleGem" />
-		
-	-->	
-
+	<!-- End of Pondskip Vale -->
 	
+	<!-- Viridian Coast - Songshu Isle -->
+	<!-- Use the dragon pluse to get to songshu isle ... @Apoc - will you code this? 
+	<Hotspot X="1672.25439" Y="22987.5117" Z="1323.06677" Range="0.8" Timeout="60" Name="New Hotspot" /> @ Dragon Pulse - 972
+	Wait for Cutscene...
+	-->
+	<TurnInQuest QuestId="444" QuestName="Striking Out" CreatureId="10113" CreatureName="Nak Goyung" X="-5333.233" Y="36888.4922" Z="208.477127" Map="jeryoung_p" />
+	<PickUpQuest QuestId="393" QuestName="Snakes In The Grass" CreatureId="10113" CreatureName="Nak Goyung" X="-5333.233" Y="36888.4922" Z="208.477127" Map="jeryoung_p" />
+	<!-- I have Chapter 20: Abandoned Post & A Thoughtful Gift as well -->
 	
-	
-	
-	
-	
+	<!-- End of Pondskip Vale -->
 	
 
+	<!-- Load Profile - Songshu Isle [Kick].xml -->
 	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<Stop Message="Load Songshu Isle [Kick].xml profile" />
 	
 	<Stop Message="End of Line" />
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </Profile>

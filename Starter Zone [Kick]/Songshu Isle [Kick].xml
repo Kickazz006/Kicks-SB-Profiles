@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Profile Name="Shonshu Isle [Kick]" Author="Kickazz006" Version="1.0.0.1">
+<!-- Viridian Coast - Songshu Isle -->
+
+<!-- in game shortcut keys:
+
+	Register("Interact", Keys.I, InteractCallback);
+	Register("TurnIn", Keys.T, TurnInCallback);
+	Register("PickUp", Keys.P, PickUpCallback);
+	Register("MoveTo", Keys.M, MoveToCallback);
+	Register("GrindHotspot", Keys.H, GrindHotspotCallback);
+	//Register("Jump", Keys.J, JumpCallback);
+	//Register("Wait", Keys.W, WaitCallback);
+   
+-->
+	
+	<DoWhen When="GameManager.UiRoot.CurrentCinematicId != 0" CancelWhen="False">
+		<SkipCutscene />
+	</DoWhen>
+	<Reference>
+	</Reference>
+		
+	<!-- Viridian Coast - Songshu Isle -->
+	<!-- Use the dragon pluse to get to songshu isle ... @Apoc - will you code this? 
+	<Hotspot X="1672.25439" Y="22987.5117" Z="1323.06677" Range="10000" Map="jeryoung_p" /> @ Dragon Pulse - 972
+	Wait for Cutscene...
+	-->
+	
+	<!-- Shongshu Pavilion -->
+	<TurnInQuest QuestId="444" QuestName="Striking Out" CreatureId="10113" CreatureName="Nak Goyung" X="-5333.233" Y="36888.4922" Z="208.477127" Map="jeryoung_p" />
+	<PickUpQuest QuestId="393" QuestName="Snakes In The Grass" CreatureId="10113" CreatureName="Nak Goyung" X="-5333.233" Y="36888.4922" Z="208.477127" Map="jeryoung_p" />
+	<PickUpQuest QuestId="447" QuestName="Lumbering Lumber" CreatureId="10206" CreatureName="Songyun" X="-4342.7207" Y="37535.5273" Z="169.910431" Map="jeryoung_p" />
+	<PickUpQuest QuestId="467" QuestName="Any Old Rock" CreatureId="10207" CreatureName="Lee Jinmyung" X="-4342.7207" Y="37535.5273" Z="169.910431" Map="jeryoung_p" />
+	<PickUpQuest QuestId="400" QuestName="The Bulbs Have Eyes" CreatureId="10210" CreatureName="Lee Chungbok" X="-5066.354" Y="37676.2461" Z="195.504211" Map="jeryoung_p" />
+	
+	<Grind QuestId="447" QuestName="Lumbering Lumber" QuestStep="1" CreatureIds="9463" CreatureName="Hulking Totem" >
+		<Hotspot X="-7561.624" Y="38561.5977" Z="211.367416" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-8559.955" Y="41113.0625" Z="218.739548" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9178.578" Y="42704.5469" Z="157.652679" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9572.653" Y="47973.0664" Z="-121.837013" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-7747.18555" Y="49882.5078" Z="221.558731" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-3871.80322" Y="44892.89" Z="1425.5498" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-2745.92065" Y="40462.125" Z="423.773834" Range="10000" Map="jeryoung_p" />		
+	</Grind>
+	<Grind QuestId="400" QuestName="The Bulbs Have Eyes" QuestStep="1" CreatureIds="9460" CreatureName="Sawtooth Bulbari" >
+		<Hotspot X="-7561.624" Y="38561.5977" Z="211.367416" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-8559.955" Y="41113.0625" Z="218.739548" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9178.578" Y="42704.5469" Z="157.652679" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9572.653" Y="47973.0664" Z="-121.837013" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-7747.18555" Y="49882.5078" Z="221.558731" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-3871.80322" Y="44892.89" Z="1425.5498" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-2745.92065" Y="40462.125" Z="423.773834" Range="10000" Map="jeryoung_p" />		
+	</Grind>
+	<Grind QuestId="393" QuestName="Snakes In The Grass" QuestStep="1" CreatureIds="9668,9669,9666" CreatureName="Dusk Adder Hunter, Butcher" >
+		<Hotspot X="-7561.624" Y="38561.5977" Z="211.367416" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-8559.955" Y="41113.0625" Z="218.739548" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9178.578" Y="42704.5469" Z="157.652679" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9572.653" Y="47973.0664" Z="-121.837013" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-7747.18555" Y="49882.5078" Z="221.558731" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-3871.80322" Y="44892.89" Z="1425.5498" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-2745.92065" Y="40462.125" Z="423.773834" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12461.8525" Y="48388.9" Z="-517.263245" Range="10000" Map="jeryoung_p" />		
+	</Grind>
+	<Interact QuestId="467" QuestName="Any Old Rock" QuestStep="1" CreatureIds="714,715,717,716,718," CreatureName="Stone" MapId="jeryoung_p" > <!-- We must get a stone and then bring it to Lee Jinmyung ... this is the same step (get and interact) -->
+		<Hotspot X="-7561.624" Y="38561.5977" Z="211.367416" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-8559.955" Y="41113.0625" Z="218.739548" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9178.578" Y="42704.5469" Z="157.652679" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9572.653" Y="47973.0664" Z="-121.837013" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-7747.18555" Y="49882.5078" Z="221.558731" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-3871.80322" Y="44892.89" Z="1425.5498" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-2745.92065" Y="40462.125" Z="423.773834" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12461.8525" Y="48388.9" Z="-517.263245" Range="10000" Map="jeryoung_p" />		
+	</Interact>
+	
+	<TurnInQuest QuestId="467" QuestName="Any Old Rock" CreatureId="10207" CreatureName="Lee Jinmyung" X="-4342.7207" Y="37535.5273" Z="169.910431" Map="jeryoung_p" />
+	<TurnInQuest QuestId="447" QuestName="Lumbering Lumber" CreatureId="10232" CreatureName="Lim Sowon" X="-7273.32861" Y="49178.125" Z="271.2173" Map="jeryoung_p" />
+	<PickUpQuest QuestId="446" QuestName="How Charming" CreatureId="10232" CreatureName="Lim Sowon" X="-7273.32861" Y="49178.125" Z="271.2173" Map="jeryoung_p" />
+	<TurnInQuest QuestId="400" QuestName="The Bulbs Have Eyes" CreatureId="10212" CreatureName="Yunsen" X="-7186.41064" Y="50570.7227" Z="281.040863" Map="jeryoung_p" />
+	<TurnInQuest QuestId="393" QuestName="Snakes In The Grass" CreatureId="10208" CreatureName="Kang Chungchun" X="-7639.17334" Y="50422.58" Z="202.26593" Map="jeryoung_p" />
+	<Interact QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="1" CreatureId="10146" CreatureName="Buyong" X="-8080.66" Y="50020.68" Z="219.57756" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="443" QuestName="A Thoughtful Gift" QuestStep="1" CreatureId="10146" CreatureName="Buyong" X="-8080.66" Y="50020.68" Z="219.57756" MapId="jeryoung_p" />
+	<Interact QuestId="446" QuestName="How Charming" QuestStep="1" CreatureIds="710,711,709,712,724,707,719,708,659" CreatureName="Distorted Totem" MapId="jeryoung_p" >
+		<Hotspot X="-6935.69873" Y="49609.53" Z="251.400116" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-7869.34229" Y="48869.08" Z="201.0422" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-9425.468" Y="47176.793" Z="-117.782043" Range="10000" Map="jeryoung_p" />
+	</Interact>
+	<TurnInQuest QuestId="446" QuestName="How Charming" CreatureId="10232" CreatureName="Lim Sowon" X="-7273.32861" Y="49178.125" Z="271.2173" Map="jeryoung_p" />
+
+	<If Condition="HasQuest(315) and not IsQuestComplete(315)"> <!-- Chapter 20: Abandoned Post -->
+		<!-- Chengun is inside the dungeon 'Adder's Nest' -->
+		<Interact QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="2" CreatureId="10384" CreatureName="Chengun" X="-6250.29346" Y="47357.8477" Z="-2214.9646" MapId="jeryoung_p" />
+		<Grind QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="3" CreatureIds="9943,9944" CreatureName="Dusk Adder Jailer" X="-6509.41553" Y="46452.8164" Z="-2203.91528" Range="10000" Map="jeryoung_p" />
+		<MoveTo QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="4" X="-6371.184" Y="46120.14" Z="-2195.58862" MapId="jeryoung_p" />
+		<Interact QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="4" CreatureId="848" CreatureName="Dusk Adder Cage Door" Range="90" X="-6371.184" Y="46120.14" Z="-2195.58862" MapId="jeryoung_p" />
+		<Interact QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="5" CreatureId="10383" CreatureName="Dodan" X="-6480.19531" Y="46015.9258" Z="-2202.3584" MapId="jeryoung_p" />
+		<!-- 6 - escort these 2 to X="-6467.06836" Y="42235.9063" Z="-2064.354" -->
+		<Grind QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="7" CreatureIds="9720,9721,9719,9722,9718" CreatureName="Dusk Adder Trainer, Duras Sister" Range="1000" Map="jeryoung_p" X="-8328" Y="42764" Z="-2056" />
+		<Interact QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="8" CreatureId="10383" CreatureName="Dodan" X="-8014.57129" Y="42689.31" Z="-2064.59058" MapId="jeryoung_p" />
+		<!-- No Dragon Pulse? -->
+		<!-- Windstride back to camp -->
+	</If>
+	<TurnInQuest QuestId="315" QuestName="Chapter 20: Abandoned Post" QuestStep="9" CreatureId="10146" CreatureName="Buyong" X="-8080.66" Y="50020.68" Z="219.57756" MapId="jeryoung_p" />
+	<!-- 316 - Chapter 21: Child's Slay -->
+	<!-- Ignoring Repeatable - Adder Subtraction -->	
+	<!-- End of Songshu Pavilion -->
+	
+	<!-- Stillbrook Monastery -->
+	<Interact QuestId="316" QuestName="Chapter 21: Child's Slay" QuestStep="1" CreatureId="10081" CreatureName="Sung Jinha" X="-14867.9043" Y="55905.2969" Z="-267.4472" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="455" QuestName="Portrait of the King of Thieves as a Young Man: Part I" CreatureId="10118" CreatureName="Giljun" X="-15342.2217" Y="55055.0859" Z="-273.771057" Map="jeryoung_p" />
+	<PickUpQuest QuestId="459" QuestName="A Fixer Upper" CreatureId="10114" CreatureName="High Priest Jungdam" X="-17705.5488" Y="59110.0039" Z="-103.504051" Map="jeryoung_p" />
+	
+	<Interact QuestId="316" QuestName="Chapter 21: Child's Slay" QuestStep="2" CreatureId="10080" CreatureName="Dondon" X="-17478.71" Y="54577.4336" Z="-606.8204" MapId="jeryoung_p" />
+	<Grind QuestId="459" QuestName="A Fixer Upper" QuestStep="1" CreatureIds="9549" CreatureName="Stringing Nettlebug" >
+		<Hotspot X="-11541.7158" Y="48136.082" Z="-508.3241" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12455.0762" Y="46599.2539" Z="-546.16156" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13926.5752" Y="50114.2266" Z="-1764.68237" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17081.16" Y="49293.71" Z="-1705.707" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19477.793" Y="47230.28" Z="-1792.73035" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19481.5547" Y="49823.33" Z="-1739.61743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21122.5449" Y="49943.1836" Z="-1731.897" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-22642.8242" Y="47842.53" Z="-1426.011" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-24891.73" Y="50842.3242" Z="-1608.3092" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-26332.5547" Y="51382.5" Z="-1431.07776" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="455" QuestName="Portrait of the King of Thieves as a Young Man: Part I" QuestStep="1" CreatureIds="9670,9466,9671" CreatureName="Dusk Adder Patrol" >
+		<Hotspot X="-11541.7158" Y="48136.082" Z="-508.3241" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12455.0762" Y="46599.2539" Z="-546.16156" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13926.5752" Y="50114.2266" Z="-1764.68237" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17081.16" Y="49293.71" Z="-1705.707" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19477.793" Y="47230.28" Z="-1792.73035" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19481.5547" Y="49823.33" Z="-1739.61743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21122.5449" Y="49943.1836" Z="-1731.897" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-22642.8242" Y="47842.53" Z="-1426.011" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-24891.73" Y="50842.3242" Z="-1608.3092" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-26332.5547" Y="51382.5" Z="-1431.07776" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="316" QuestName="Chapter 21: Child's Slay" QuestStep="3" CreatureIds="9483" CreatureName="Captain Womah" Range="1000" Map="jeryoung_p" X="-23760" Y="47572" Z="-1364" />
+	<TurnInQuest QuestId="316" QuestName="Chapter 21: Child's Slay" QuestStep="4" CreatureId="10080" CreatureName="Dondon" X="-17478.71" Y="54577.4336" Z="-606.8204" MapId="jeryoung_p" />
+	<!-- 493 - Chapter 22: The Informer -->
+	<!-- 943 - The Dragon's Blood - auto popup -->
+	<ReadLetter Condition="not HasQuest(943) and not IsQuestComplete(943)" /> <!-- The Dragon's Blood -->
+	<TurnInQuest QuestId="455" QuestName="Portrait of the King of Thieves as a Young Man: Part I" CreatureId="10118" CreatureName="Giljun" X="-15342.2217" Y="55055.0859" Z="-273.771057" Map="jeryoung_p" />
+	<PickUpQuest QuestId="463" QuestName="In Her Memory: Part I" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<TurnInQuest QuestId="459" QuestName="A Fixer Upper" CreatureId="10114" CreatureName="High Priest Jungdam" X="-17705.5488" Y="59110.0039" Z="-103.504051" Map="jeryoung_p" />
+	<PickUpQuest QuestId="398" QuestName="The Little Things" CreatureId="10116" CreatureName="Haywol" X="-17148.918" Y="59137.8047" Z="-103.5039" Map="jeryoung_p" />
+	<PickUpQuest QuestId="462" QuestName="You're a Potter, Bokdol!" CreatureId="10226" CreatureName="Lee Bokdol" X="-18588.125" Y="56973.06" Z="-323.1095" Map="jeryoung_p" />
+	<PickUpQuest QuestId="461" QuestName="Dishing It Out" CreatureId="10228" CreatureName="Mayuhan" X="-21736.6816" Y="54260.5664" Z="-589.6687" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="458" QuestName="Not What It Used to Be" CreatureId="10125" CreatureName="Bofun" X="-21178.4473" Y="54405.1328" Z="-589.811768" Map="jeryoung_p" /> <!-- Boss -->
+	<If Condition="HasQuest(943) and not IsQuestComplete(943)"> <!-- The Dragon's Blood -->
+		<MoveTo QuestId="943" QuestName="The Dragon's Blood" QuestStep="1" X="-13597.1143" Y="54909.66" Z="-2257.18848" MapId="jeryoung_p" />
+		<Interact QuestId="943" QuestName="The Dragon's Blood" QuestStep="2" CreatureId="10644" CreatureName="Bunyang" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" />
+		<Interact QuestId="943" QuestName="The Dragon's Blood" QuestStep="3" CreatureId="736" CreatureName="Dragon Coil" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" />
+		<Interact QuestId="943" QuestName="The Dragon's Blood" QuestStep="4" CreatureId="10643" CreatureName="Bunah" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" />
+		<Interact QuestId="943" QuestName="The Dragon's Blood" QuestStep="5" CreatureId="737" CreatureName="Dragon Coil" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" />
+		<Interact QuestId="943" QuestName="The Dragon's Blood" QuestStep="6" CreatureId="10643" CreatureName="Bunah" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" />
+		<!-- WaitTimer 10 seconds - Step 7 -->
+	</If>
+	<TurnInQuest QuestId="943" QuestName="The Dragon's Blood" QuestStep="8" CreatureId="10644" CreatureName="Bunyang" X="-14270.5439" Y="55743.56" Z="-2262.51343" MapId="jeryoung_p" /> <!-- We now have Dragon Blood -->
+	<Interact QuestId="463" QuestName="In Her Memory: Part I" QuestStep="1" CreatureId="10214" CreatureName="Banyong" X="-17503.7559" Y="41661.69" Z="-2215.52271" MapId="jeryoung_p" />
+	<Interact QuestId="463" QuestName="In Her Memory: Part I" QuestStep="2" CreatureId="679,677,678" CreatureName="Banyong" X="-10912.9082" Y="36783.2" Z="-1493.41992" MapId="jeryoung_p" /> <!-- Must get a pot and then bring it back to Banyong -->
+	<Interact QuestId="463" QuestName="In Her Memory: Part I" QuestStep="2" CreatureId="10214" CreatureName="Banyong" X="-17503.7559" Y="41661.69" Z="-2215.52271" MapId="jeryoung_p" />
+	<Interact QuestId="462" QuestName="You're a Potter, Bokdol!" QuestStep="1" CreatureId="721" CreatureName="Pawsome Pottery" X="-13336.5566" Y="37198.78" Z="-1659.99072" MapId="jeryoung_p" />
+	<Grind QuestId="458" QuestName="Not What It Used to Be" QuestStep="1" CreatureIds="9506" CreatureName="Claypaw Top Dog Wu Fu" Range="10000" Map="jeryoung_p" X="-12733.42" Y="31359.43" Z="-1855.38855" /> <!-- I would clear around here first --> <!-- Need to grind him for earring upgrade - make profile -->
+	<Interact QuestId="493" QuestName="Chapter 22: The Informer" QuestStep="1" CreatureIds="691,692,690,694,693,695,696,689,688,687,676,681,682,675,680,684,674,686,685,683" CreatureName="Delicious Mushrooms" MapId="jeryoung_p" >
+		<Hotspot X="-17625.7168" Y="43743.93" Z="-1795.819" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19572.6875" Y="42753.11" Z="-2387.73462" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19265.65" Y="39898.2539" Z="-2246.37061" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18339.5879" Y="38213.9531" Z="-1937.51721" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17594.1" Y="36887.21" Z="-1922.9657" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18958.5078" Y="36548.9961" Z="-1849.91125" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-20279.8281" Y="35287.65" Z="-1562.07642" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21364.02" Y="33335.84" Z="-1255.56873" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21164.74" Y="31418.4043" Z="-1167.16565" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19805.7813" Y="31336.291" Z="-1324.637" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16690.707" Y="32287.8086" Z="-1774.47083" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15090.8525" Y="30921.1758" Z="-1842.76978" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12565.41" Y="30264.74" Z="-1677.58325" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12708.4834" Y="31690.0684" Z="-1892.62244" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13948.1914" Y="33188.0234" Z="-2060.58" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15054.5537" Y="34610.1641" Z="-2063.743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17168.74" Y="34852.12" Z="-2032.69" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16704" Y="35416" Z="-1982.62146" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17777.6719" Y="37346.54" Z="-1913.02087" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16139.0459" Y="38557.6953" Z="-1894.5188" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13699.4619" Y="39275.2969" Z="-1649.22949" Range="10000" Map="jeryoung_p" />
+	</Interact>
+	<Grind QuestId="461" QuestName="Dishing It Out" QuestStep="1" CreatureIds="9464,9469,9467,9470,9591" CreatureName="Claypaw Potdog" MapId="jeryoung_p" >
+		<Hotspot X="-17625.7168" Y="43743.93" Z="-1795.819" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19572.6875" Y="42753.11" Z="-2387.73462" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19265.65" Y="39898.2539" Z="-2246.37061" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18339.5879" Y="38213.9531" Z="-1937.51721" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17594.1" Y="36887.21" Z="-1922.9657" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18958.5078" Y="36548.9961" Z="-1849.91125" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-20279.8281" Y="35287.65" Z="-1562.07642" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21364.02" Y="33335.84" Z="-1255.56873" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21164.74" Y="31418.4043" Z="-1167.16565" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19805.7813" Y="31336.291" Z="-1324.637" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16690.707" Y="32287.8086" Z="-1774.47083" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15090.8525" Y="30921.1758" Z="-1842.76978" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12565.41" Y="30264.74" Z="-1677.58325" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12708.4834" Y="31690.0684" Z="-1892.62244" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13948.1914" Y="33188.0234" Z="-2060.58" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15054.5537" Y="34610.1641" Z="-2063.743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17168.74" Y="34852.12" Z="-2032.69" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16704" Y="35416" Z="-1982.62146" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17777.6719" Y="37346.54" Z="-1913.02087" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16139.0459" Y="38557.6953" Z="-1894.5188" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13699.4619" Y="39275.2969" Z="-1649.22949" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="398" QuestName="The Little Things" QuestStep="1,1" CreatureIds="9465" CreatureName="Vile Deathcap" MapId="jeryoung_p" >
+		<Hotspot X="-17625.7168" Y="43743.93" Z="-1795.819" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19572.6875" Y="42753.11" Z="-2387.73462" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19265.65" Y="39898.2539" Z="-2246.37061" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18339.5879" Y="38213.9531" Z="-1937.51721" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17594.1" Y="36887.21" Z="-1922.9657" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18958.5078" Y="36548.9961" Z="-1849.91125" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-20279.8281" Y="35287.65" Z="-1562.07642" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21364.02" Y="33335.84" Z="-1255.56873" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21164.74" Y="31418.4043" Z="-1167.16565" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19805.7813" Y="31336.291" Z="-1324.637" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16690.707" Y="32287.8086" Z="-1774.47083" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15090.8525" Y="30921.1758" Z="-1842.76978" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12565.41" Y="30264.74" Z="-1677.58325" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12708.4834" Y="31690.0684" Z="-1892.62244" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13948.1914" Y="33188.0234" Z="-2060.58" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15054.5537" Y="34610.1641" Z="-2063.743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17168.74" Y="34852.12" Z="-2032.69" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16704" Y="35416" Z="-1982.62146" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17777.6719" Y="37346.54" Z="-1913.02087" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16139.0459" Y="38557.6953" Z="-1894.5188" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13699.4619" Y="39275.2969" Z="-1649.22949" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="398" QuestName="The Little Things" QuestStep="1,2" CreatureIds="9469" CreatureName="Vile Ravenous Vipercap" MapId="jeryoung_p" >
+		<Hotspot X="-17625.7168" Y="43743.93" Z="-1795.819" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19572.6875" Y="42753.11" Z="-2387.73462" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19265.65" Y="39898.2539" Z="-2246.37061" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18339.5879" Y="38213.9531" Z="-1937.51721" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17594.1" Y="36887.21" Z="-1922.9657" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18958.5078" Y="36548.9961" Z="-1849.91125" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-20279.8281" Y="35287.65" Z="-1562.07642" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21364.02" Y="33335.84" Z="-1255.56873" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21164.74" Y="31418.4043" Z="-1167.16565" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19805.7813" Y="31336.291" Z="-1324.637" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16690.707" Y="32287.8086" Z="-1774.47083" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15090.8525" Y="30921.1758" Z="-1842.76978" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12565.41" Y="30264.74" Z="-1677.58325" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12708.4834" Y="31690.0684" Z="-1892.62244" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13948.1914" Y="33188.0234" Z="-2060.58" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15054.5537" Y="34610.1641" Z="-2063.743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17168.74" Y="34852.12" Z="-2032.69" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16704" Y="35416" Z="-1982.62146" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17777.6719" Y="37346.54" Z="-1913.02087" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16139.0459" Y="38557.6953" Z="-1894.5188" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13699.4619" Y="39275.2969" Z="-1649.22949" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Interact QuestId="398" QuestName="The Little Things" QuestStep="1,3" CreatureIds="670,669,672,671,668,673,667" CreatureName="Resin Tube" MapId="jeryoung_p" >
+		<Hotspot X="-17625.7168" Y="43743.93" Z="-1795.819" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19572.6875" Y="42753.11" Z="-2387.73462" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19265.65" Y="39898.2539" Z="-2246.37061" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18339.5879" Y="38213.9531" Z="-1937.51721" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17594.1" Y="36887.21" Z="-1922.9657" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-18958.5078" Y="36548.9961" Z="-1849.91125" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-20279.8281" Y="35287.65" Z="-1562.07642" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21364.02" Y="33335.84" Z="-1255.56873" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-21164.74" Y="31418.4043" Z="-1167.16565" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-19805.7813" Y="31336.291" Z="-1324.637" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16690.707" Y="32287.8086" Z="-1774.47083" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15090.8525" Y="30921.1758" Z="-1842.76978" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12565.41" Y="30264.74" Z="-1677.58325" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-12708.4834" Y="31690.0684" Z="-1892.62244" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13948.1914" Y="33188.0234" Z="-2060.58" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-15054.5537" Y="34610.1641" Z="-2063.743" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17168.74" Y="34852.12" Z="-2032.69" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16704" Y="35416" Z="-1982.62146" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-17777.6719" Y="37346.54" Z="-1913.02087" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-16139.0459" Y="38557.6953" Z="-1894.5188" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-13699.4619" Y="39275.2969" Z="-1649.22949" Range="10000" Map="jeryoung_p" />
+	</Interact>
+	<TurnInQuest QuestId="458" QuestName="Not What It Used to Be" CreatureId="10125" CreatureName="Bofun" X="-21178.4473" Y="54405.1328" Z="-589.811768" Map="jeryoung_p" /> <!-- ReadLetter Turn In Quest -->
+	<TurnInQuest QuestId="461" QuestName="Dishing It Out" CreatureId="10228" CreatureName="Mayuhan" X="-21736.6816" Y="54260.5664" Z="-589.6687" Map="jeryoung_p" /> <!-- Repeatable --> <!-- ReadLetter Turn In Quest -->
+	<Interact QuestId="493" QuestName="Chapter 22: The Informer" QuestStep="2" CreatureId="10080" CreatureName="Dondon" X="-17478.71" Y="54577.4336" Z="-606.8204" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="462" QuestName="You're a Potter, Bokdol!" CreatureId="10226" CreatureName="Lee Bokdol" X="-18588.125" Y="56973.06" Z="-323.1095" Map="jeryoung_p" />
+	<TurnInQuest QuestId="398" QuestName="The Little Things" CreatureId="10116" CreatureName="Haywol" X="-17148.918" Y="59137.8047" Z="-103.5039" Map="jeryoung_p" />
+	<TurnInQuest QuestId="463" QuestName="In Her Memory: Part I" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<Interact QuestId="493" QuestName="Chapter 22: The Informer" QuestStep="3" CreatureId="10081" CreatureName="Sung Jinha" X="-14867.9043" Y="55905.2969" Z="-267.4472" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="493" QuestName="Chapter 22: The Informer" QuestStep="4" CreatureId="10185" CreatureName="Dochun" X="-14554.8076" Y="55102.7461" Z="-247.53952" MapId="jeryoung_p" />
+	<!-- 317 - Chapter 23: The Family Man -->
+	<PickUpQuest QuestId="464" QuestName="In Her Memory: Part II" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<PickUpQuest QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" CreatureId="10118" CreatureName="Giljun" X="-15342.2217" Y="55055.0859" Z="-273.771057" Map="jeryoung_p" />
+	
+	<!-- Lair of the Yutay -->
+	<Interact QuestId="464" QuestName="In Her Memory: Part II" QuestStep="1" CreatureId="10215" CreatureName="Banchia" X="-23656.3359" Y="41033.9531" Z="-2691.707" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="466" QuestName="The Yutay" CreatureId="10216" CreatureName="Bansan" X="-23656.3359" Y="41033.9531" Z="-2691.707" Map="jeryoung_p" /> <!-- Repeatable -->
+	<Grind QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" QuestStep="1" CreatureIds="9462" CreatureName="Sand Conch" MapId="jeryoung_p" >
+		<Hotspot X="-23706.7734" Y="40122.0547" Z="-3124.41016" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-24569.877" Y="38045.5273" Z="-3146.2168" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Interact QuestId="317" QuestName="Chapter 23: The Family Man" QuestStep="1" CreatureId="9551" CreatureName="Bumbak" X="-17852" Y="39156" Z="-3792" MapId="jeryoung_p" />
+	<Grind QuestId="466" QuestName="The Yutay" QuestStep="1" CreatureIds="9690" CreatureName="Boss Vilray" Range="1000" Map="jeryoung_p" X="-12555.9053" Y="35143.7422" Z="-3486.04419" /> <!-- Grab Treasure Chest while we're here --> <!-- Make sure we use the dragon shrine... and get out of the AoE -->
+	<TurnInQuest QuestId="466" QuestName="The Yutay" CreatureId="10216" CreatureName="Bansan" X="-23656.3359" Y="41033.9531" Z="-2691.707" Map="jeryoung_p" /> <!-- Repeatable -->
+	<!-- End Lair of the Yutay -->
+	<!-- I windstrided to Stillbrook -->
+	
+	<Interact QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" QuestStep="2" CreatureId="10115" CreatureName="Blindman Sim" X="-21031.3789" Y="55759.625" Z="-605.0517" MapId="jeryoung_p" />
+	<Interact QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" QuestStep="3" CreatureId="732" CreatureName="Cauldron" X="-21698.7031" Y="55675.6563" Z="-606.416565" MapId="jeryoung_p" />
+	<Interact QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" QuestStep="4" CreatureId="10115" CreatureName="Blindman Sim" X="-21031.3789" Y="55759.625" Z="-605.0517" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="456" QuestName="Portrait of the King of Thieves as a Young Man: Part II" CreatureId="10114" CreatureName="High Priest Jungdam" X="-17705.5488" Y="59110.0039" Z="-103.504051" Map="jeryoung_p" />
+	<TurnInQuest QuestId="464" QuestName="In Her Memory: Part II" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<Interact QuestId="317" QuestName="Chapter 23: The Family Man" QuestStep="2" CreatureId="10080" CreatureName="Dondon" X="-17478.71" Y="54577.4336" Z="-606.8204" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="317" QuestName="Chapter 23: The Family Man" QuestStep="3" CreatureId="10084" CreatureName="Banyow" X="-17478.71" Y="54577.4336" Z="-606.8204" MapId="jeryoung_p" />
+	<!-- 318 - Chapter 24: Take a Message -->
+	<ReadLetter Condition="not HasQuest(419) and not IsQuestComplete(419) and isClass('SoulFighter')" /> <!-- Soul Fighter PopUp - Generous to a Vault -->
+	<PickUpQuest QuestId="1236" QuestName="Warrior's Wares" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<If Condition="HasQuest(1236) and not IsQuestComplete(1236)"> <!-- Warrior's Wares -->
+		<Stop Message="Press F10" />
+	</If>
+	<TurnInQuest QuestId="1236" QuestName="Warrior's Wares" CreatureId="10213" CreatureName="Madosung" X="-15433.9189" Y="55084.47" Z="-292.616547" Map="jeryoung_p" />
+	<PickUpQuest QuestId="473" QuestName="Lost and Found" CreatureId="10228" CreatureName="Mayuhan" X="-21736.6816" Y="54260.5664" Z="-589.6687" Map="jeryoung_p" /> <!-- Repeatable -->
+	<!-- End of Stillbrook Monastery -->
+	
+	<!-- Sentinel Outpost -->
+	<TurnInQuest QuestId="473" QuestName="Lost and Found" CreatureId="10500" CreatureName="Tokche" X="-32756.6367" Y="59295.2656" Z="-1914.622" Map="jeryoung_p" /> <!-- Soulfighter only -->
+	<PickUpQuest QuestId="476" QuestName="Blackram Ambush" CreatureId="10418" CreatureName="Buyong" X="-32978.6953" Y="59289.3477" Z="-1912.61682" Map="jeryoung_p" />
+	<Interact QuestId="318" QuestName="Chapter 24: Take a Message" QuestStep="1" CreatureId="10120" CreatureName="Somunbu" X="-32087.793" Y="59260.32" Z="-1922.11218" MapId="jeryoung_p" />
+	<PickUpQuest QuestId="402" QuestName="Beat to the Punch" CreatureId="10420" CreatureName="Yigan" X="-32276.0527" Y="59322.3" Z="-1918.09448" Map="jeryoung_p" /> <!-- Repeatable -->
+	<PickUpQuest QuestId="410" QuestName="Class Dismissed" CreatureId="10419" CreatureName="Mokdun" X="-32837.49" Y="59125.9023" Z="-1905.16138" Map="jeryoung_p" />
+	
+	<Interact QuestId="476" QuestName="Blackram Ambush" QuestStep="1,2" CreatureIds="9763,612,613,614,615,616" CreatureName="Shaking Shrub" MapId="jeryoung_p" >
+		<Hotspot X="-31284.2539" Y="62894.4531" Z="-2415.09253" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33288" Y="61856" Z="-2380" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33738.7422" Y="63967.6875" Z="-2963.67163" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33090.96" Y="65775.2344" Z="-2818.12622" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33125.71" Y="67776.43" Z="-2853.47827" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-31610.6719" Y="66120.61" Z="-2645.10742" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-31192.6914" Y="62929.1133" Z="-2378.64478" Range="10000" Map="jeryoung_p" />
+	</Interact>
+	<Grind QuestId="476" QuestName="Blackram Ambush" QuestStep="1,1" CreatureIds="9763,9759,9837,9653,9760,9649,9836,9652,9654,9761,9655" CreatureName="Blackram Operatives" MapId="jeryoung_p" >
+		<Hotspot X="-31284.2539" Y="62894.4531" Z="-2415.09253" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33288" Y="61856" Z="-2380" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33738.7422" Y="63967.6875" Z="-2963.67163" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33090.96" Y="65775.2344" Z="-2818.12622" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33125.71" Y="67776.43" Z="-2853.47827" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-31610.6719" Y="66120.61" Z="-2645.10742" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-31192.6914" Y="62929.1133" Z="-2378.64478" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Interact QuestId="318" QuestName="Chapter 24: Take a Message" QuestStep="1,1" CreatureId="625" CreatureName="Blackram's Carrier Crow" X="-33869.082" Y="70619.71" Z="-2723.14819" MapId="jeryoung_p" />
+	<Grind QuestId="318" QuestName="Chapter 24: Take a Message" QuestStep="1,2" CreatureIds="9484,9485,9679,9681" CreatureName="Blackram Recruit, Cadet" MapId="jeryoung_p" >
+		<Hotspot X="-34418.4258" Y="71855.09" Z="-3080.31763" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33264.8125" Y="72745.59" Z="-3068.80469" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="318" QuestName="Chapter 24: Take a Message" QuestStep="1,3" CreatureIds="9484,9485,9679,9681" CreatureName="Blackram Recruit, Cadet" MapId="jeryoung_p" >
+		<Hotspot X="-34418.4258" Y="71855.09" Z="-3080.31763" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-33264.8125" Y="72745.59" Z="-3068.80469" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="402" QuestName="Beat to the Punch" QuestStep="1" CreatureIds="9652,9653" CreatureName="Drum and Blackram Mercenary Captain" MapId="jeryoung_p" >
+		<!-- Interact: kill mobs, then loot a drumstick, then beat a drum - ,641,643,642 - but, the captains also spawn randomly -->
+		<Hotspot X="-29047.3926" Y="62778.0469" Z="-1249.62451" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-28661.53" Y="62730.05" Z="-1313.76758" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-29078.92" Y="63458.3672" Z="-1255.18628" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-29788.81" Y="62333.6953" Z="-1135.44617" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<Grind QuestId="410" QuestName="Class Dismissed" QuestStep="1" CreatureIds="9675,9674,9672,9468" CreatureName="Blackram Outrider, Patrol" MapId="jeryoung_p" >
+		<Hotspot X="-35852.68" Y="72278.6953" Z="-3079.84717" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-32387.0234" Y="71271.33" Z="-3055.291" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-29669.1387" Y="71132.53" Z="-3119.04224" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-28400.49" Y="74500.78" Z="-3034.80029" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-25816.209" Y="70363.59" Z="-3109.78271" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-27273.51" Y="68515.92" Z="-3173.8938" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-26020.0977" Y="64089.29" Z="-2619.32275" Range="10000" Map="jeryoung_p" />
+		<Hotspot X="-27338.16" Y="64217.2656" Z="-2473.729" Range="10000" Map="jeryoung_p" />
+	</Grind>
+	<!-- Windstride back to town? -->
+	
+	<TurnInQuest QuestId="402" QuestName="Beat to the Punch" CreatureId="10420" CreatureName="Yigan" X="-32276.0527" Y="59322.3" Z="-1918.09448" Map="jeryoung_p" /> <!-- Repeatable --> <!-- Click to Turnin -->
+	<TurnInQuest QuestId="410" QuestName="Class Dismissed" CreatureId="10419" CreatureName="Mokdun" X="-32837.49" Y="59125.9023" Z="-1905.16138" Map="jeryoung_p" />
+	<TurnInQuest QuestId="476" QuestName="Blackram Ambush" CreatureId="10418" CreatureName="Buyong" X="-32978.6953" Y="59289.3477" Z="-1912.61682" Map="jeryoung_p" />
+	<TurnInQuest QuestId="318" QuestName="Chapter 24: Take a Message" QuestStep="3" CreatureId="10120" CreatureName="Somunbu" X="-32087.793" Y="59260.32" Z="-1922.11218" MapId="jeryoung_p" />
+	<!-- 495 - Chapter 25: Up in Arms -->
+	<PickUpQuest QuestId="475" QuestName="Lilies in the Valley" CreatureId="10418" CreatureName="Buyong" X="-32978.6953" Y="59289.3477" Z="-1912.61682" Map="jeryoung_p" />
+	<PickUpQuest QuestId="406" QuestName="The Lone Monk" CreatureId="10121" CreatureName="Bopay" X="-32796" Y="59552" Z="-1934.06555" Map="jeryoung_p" />
+	
+	<!-- Sentinel Coast - Just South of Sentinel Outpost -->
+	<Interact QuestId="495" QuestName="Chapter 25: Up in Arms" QuestStep="1" CreatureId="10217" CreatureName="Bok Jinmu" X="-36984.7578" Y="58531.2" Z="-2541.19141" MapId="jeryoung_p" />
+	<TurnInQuest QuestId="406" QuestName="The Lone Monk" CreatureId="10119" CreatureName="Bupwang" X="-37009.1523" Y="58633.0977" Z="-2550.05981" Map="jeryoung_p" />
+	<PickUpQuest QuestId="406" QuestName="The Lone Guardian" CreatureId="10119" CreatureName="Bupwang" X="-37009.1523" Y="58633.0977" Z="-2550.05981" Map="jeryoung_p" />
+	
+	
+
+	
+	
+	<Stop Message="stop" />
+	
+	<!-- Kick Stopped here today -->
+	
+
+	<!--
+
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureId="" CreatureName=""  MapId="jeryoung_p" />
+	<Interact QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
+		<Hotspot  Range="10000" Map="jeryoung_p" />
+	</Interact>
+
+	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" Range="1000" Map="jeryoung_p"  />
+
+	<Grind QuestId="" QuestName="" QuestStep="" CreatureIds="" CreatureName="" MapId="jeryoung_p" >
+		<Hotspot  Range="10000" Map="jeryoung_p" />
+	</Grind>
+
+	<TurnInQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+	<PickUpQuest QuestId="" QuestName="" CreatureId="" CreatureName=""  Map="jeryoung_p" />
+
+	<If Condition="HasQuest() and not IsQuestComplete()">
+	
+	</If>
+	
+		<MoveTo QuestId="" QuestName="" QuestStep=""  MapId="jeryoung_p" />
+		
+	<ReadLetter Condition="not HasQuest() and not IsQuestComplete() and isClass('SoulFighter')" />
+
+		<ForcedCombat QuestId="" QuestStep="" CreatureId="" >
+			<Cast Skill="SoulFighter_Attack_KungFuStance_Lv1" Condition="not Stance(31);" />
+			<Cast Skill="SoulFighter_Force_Coldblast_Lv1" />
+			<Cast Skill="SoulFighter_Force_Frostenergy_Lv1" />
+		</ForcedCombat>
+
+		<Stop Message="stop" />
+		<Stop Condition="not IsQuestComplete()" Message="Complete the quest and push start" />
+		
+		
+	<Loot Condition="not IsObjectiveComplete(404, 1)" XYZ="" MapId="jeryoung_p" Range="10000" From="1234,4321" />
+		
+		
+		<Carry QuestId="" QuestStep=""  MapId="jeryoung_p"  CreatureId="" RequiresInteraction="true" >
+			<Hotspot  MapId="jeryoung_p" Range="40" Aliases="ids" />
+		</Carry>
+		
+		<Button QuestId="" QuestStep="" Shortcut="ToggleGem" />
+		
+	-->	
+
+	
+	
+	
+	
+	<Stop Message="End of Line" />
+
+	
+	
+	
+</Profile>
